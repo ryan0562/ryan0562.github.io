@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>前端跨页面通信 | wk-ui</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="王先生的小屋">
+    
+    <link rel="preload" href="/assets/css/0.styles.01bdebb6.css" as="style"><link rel="preload" href="/assets/js/app.e33ebccf.js" as="script"><link rel="preload" href="/assets/js/2.bae70891.js" as="script"><link rel="preload" href="/assets/js/19.69cd322f.js" as="script"><link rel="prefetch" href="/assets/js/10.8298ea95.js"><link rel="prefetch" href="/assets/js/11.873c81a7.js"><link rel="prefetch" href="/assets/js/12.f56915d4.js"><link rel="prefetch" href="/assets/js/13.7079f56e.js"><link rel="prefetch" href="/assets/js/14.6811440e.js"><link rel="prefetch" href="/assets/js/15.f8ce03df.js"><link rel="prefetch" href="/assets/js/16.284f104f.js"><link rel="prefetch" href="/assets/js/17.8963c8bb.js"><link rel="prefetch" href="/assets/js/18.8ebd6a6d.js"><link rel="prefetch" href="/assets/js/20.c217af0c.js"><link rel="prefetch" href="/assets/js/21.5ba2c3f9.js"><link rel="prefetch" href="/assets/js/22.cca2e47d.js"><link rel="prefetch" href="/assets/js/23.f5ee1441.js"><link rel="prefetch" href="/assets/js/24.d48dd4b4.js"><link rel="prefetch" href="/assets/js/25.947776de.js"><link rel="prefetch" href="/assets/js/26.9745e220.js"><link rel="prefetch" href="/assets/js/27.370387ac.js"><link rel="prefetch" href="/assets/js/28.ac8eebda.js"><link rel="prefetch" href="/assets/js/29.72c04fac.js"><link rel="prefetch" href="/assets/js/3.c8f8252b.js"><link rel="prefetch" href="/assets/js/30.f5d3bcce.js"><link rel="prefetch" href="/assets/js/31.bffc2403.js"><link rel="prefetch" href="/assets/js/32.de76fab2.js"><link rel="prefetch" href="/assets/js/33.0c30d7db.js"><link rel="prefetch" href="/assets/js/4.266e11be.js"><link rel="prefetch" href="/assets/js/5.c40524d9.js"><link rel="prefetch" href="/assets/js/6.6ff27351.js"><link rel="prefetch" href="/assets/js/7.6f5444f7.js"><link rel="prefetch" href="/assets/js/8.6202f699.js"><link rel="prefetch" href="/assets/js/9.8c5152dc.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.01bdebb6.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">wk-ui</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/document/form/dialog.html" class="nav-link">
+  组件文档
+</a></div><div class="nav-item"><a href="/document/directive/permission.html" class="nav-link">
+  指令
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具" class="dropdown-title"><span class="title">工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="工具" class="mobile-dropdown-title"><span class="title">工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/tools/git/git-ssh.html" class="nav-link">
+  git解决方案
+</a></li><li class="dropdown-item"><!----> <a href="/document/tools/git/git-changeOrigin.html" class="nav-link">
+  git换源
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="阅读" class="dropdown-title"><span class="title">阅读</span> <span class="arrow down"></span></button> <button type="button" aria-label="阅读" class="mobile-dropdown-title"><span class="title">阅读</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/read/正面教育.html" class="nav-link">
+  正面教育
+</a></li></ul></div></div><div class="nav-item"><a href="/document/skill/skill.html" class="nav-link">
+  开发技巧
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="utils" class="dropdown-title"><span class="title">utils</span> <span class="arrow down"></span></button> <button type="button" aria-label="utils" class="mobile-dropdown-title"><span class="title">utils</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/utils/vue.html" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/document/utils/媒体.html" class="nav-link">
+  媒体
+</a></li><li class="dropdown-item"><!----> <a href="/document/utils/数据类型操作.html" class="nav-link">
+  数据类型操作
+</a></li><li class="dropdown-item"><!----> <a href="/document/utils/时间操作.html" class="nav-link">
+  时间操作
+</a></li><li class="dropdown-item"><!----> <a href="/document/utils/空间、坐标、地理.html" class="nav-link">
+  空间、坐标、地理
+</a></li><li class="dropdown-item"><!----> <a href="/document/utils/设备、环境、功能支持.html" class="nav-link">
+  设备、环境、功能支持
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="solution" class="dropdown-title"><span class="title">solution</span> <span class="arrow down"></span></button> <button type="button" aria-label="solution" class="mobile-dropdown-title"><span class="title">solution</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/solution/微前端/微前端.html" class="nav-link">
+  微前端
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/夸页面通信/夸页面通信.html" class="nav-link">
+  夸页面通信
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/换肤/换肤.html" class="nav-link">
+  换肤
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/大屏模块化/大屏模块化方案.html" class="nav-link">
+  大屏模块化
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/高分辨率图片加载/高分辨率图片加载.html" class="nav-link">
+  高分辨率图片加载
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/录屏/录屏.html" class="nav-link">
+  录屏
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="play" class="dropdown-title"><span class="title">play</span> <span class="arrow down"></span></button> <button type="button" aria-label="play" class="mobile-dropdown-title"><span class="title">play</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/play/autoSendEmail/autoSendEmail.html" class="nav-link">
+  自动发送邮件
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/document/form/dialog.html" class="nav-link">
+  组件文档
+</a></div><div class="nav-item"><a href="/document/directive/permission.html" class="nav-link">
+  指令
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具" class="dropdown-title"><span class="title">工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="工具" class="mobile-dropdown-title"><span class="title">工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/tools/git/git-ssh.html" class="nav-link">
+  git解决方案
+</a></li><li class="dropdown-item"><!----> <a href="/document/tools/git/git-changeOrigin.html" class="nav-link">
+  git换源
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="阅读" class="dropdown-title"><span class="title">阅读</span> <span class="arrow down"></span></button> <button type="button" aria-label="阅读" class="mobile-dropdown-title"><span class="title">阅读</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/read/正面教育.html" class="nav-link">
+  正面教育
+</a></li></ul></div></div><div class="nav-item"><a href="/document/skill/skill.html" class="nav-link">
+  开发技巧
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="utils" class="dropdown-title"><span class="title">utils</span> <span class="arrow down"></span></button> <button type="button" aria-label="utils" class="mobile-dropdown-title"><span class="title">utils</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/utils/vue.html" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/document/utils/媒体.html" class="nav-link">
+  媒体
+</a></li><li class="dropdown-item"><!----> <a href="/document/utils/数据类型操作.html" class="nav-link">
+  数据类型操作
+</a></li><li class="dropdown-item"><!----> <a href="/document/utils/时间操作.html" class="nav-link">
+  时间操作
+</a></li><li class="dropdown-item"><!----> <a href="/document/utils/空间、坐标、地理.html" class="nav-link">
+  空间、坐标、地理
+</a></li><li class="dropdown-item"><!----> <a href="/document/utils/设备、环境、功能支持.html" class="nav-link">
+  设备、环境、功能支持
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="solution" class="dropdown-title"><span class="title">solution</span> <span class="arrow down"></span></button> <button type="button" aria-label="solution" class="mobile-dropdown-title"><span class="title">solution</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/solution/微前端/微前端.html" class="nav-link">
+  微前端
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/夸页面通信/夸页面通信.html" class="nav-link">
+  夸页面通信
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/换肤/换肤.html" class="nav-link">
+  换肤
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/大屏模块化/大屏模块化方案.html" class="nav-link">
+  大屏模块化
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/高分辨率图片加载/高分辨率图片加载.html" class="nav-link">
+  高分辨率图片加载
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/录屏/录屏.html" class="nav-link">
+  录屏
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="play" class="dropdown-title"><span class="title">play</span> <span class="arrow down"></span></button> <button type="button" aria-label="play" class="mobile-dropdown-title"><span class="title">play</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/play/autoSendEmail/autoSendEmail.html" class="nav-link">
+  自动发送邮件
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/document/solution/夸页面通信/夸页面通信.html" class="active sidebar-link">夸页面通信</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/document/solution/夸页面通信/夸页面通信.html#背景" class="sidebar-link">背景</a></li><li class="sidebar-sub-header"><a href="/document/solution/夸页面通信/夸页面通信.html#onstorage" class="sidebar-link">onstorage</a></li><li class="sidebar-sub-header"><a href="/document/solution/夸页面通信/夸页面通信.html#broadcast-channel" class="sidebar-link">BroadCast Channel</a></li><li class="sidebar-sub-header"><a href="/document/solution/夸页面通信/夸页面通信.html#service-worker" class="sidebar-link">Service Worker</a></li><li class="sidebar-sub-header"><a href="/document/solution/夸页面通信/夸页面通信.html#open-opener" class="sidebar-link">open &amp; opener</a></li><li class="sidebar-sub-header"><a href="/document/solution/夸页面通信/夸页面通信.html#sharedworker" class="sidebar-link">SharedWorker</a></li><li class="sidebar-sub-header"><a href="/document/solution/夸页面通信/夸页面通信.html#总结" class="sidebar-link">总结</a></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="前端跨页面通信"><a href="#前端跨页面通信" class="header-anchor">#</a> 前端跨页面通信</h1> <h2 id="背景"><a href="#背景" class="header-anchor">#</a> 背景</h2> <p>用户在实际的操作场景中会打开多个 Tab 页面A、B、C、D、E...。当用户在 E Tab 页退出登录，并且登录到新的账号，然后用户切换到非 E 的 Tab 时，发现登录信息没有刷新， 并且由于登录信息没有刷新，会出现操作异常。这个问题简单来说就是多个 Tab 信息没有同步。问题的关键在于一个 Tab 退出重新登录，需要通知到其他的 Tab 刷新到最新的信息。本质问题就是<strong>解决前端跨页面通信</strong>。</p> <p>本篇文章就是对前端跨页面通信的解决方案做了一个了解。</p> <h2 id="onstorage"><a href="#onstorage" class="header-anchor">#</a> onstorage</h2> <p>WindowEventHandlers.onstorage 属性包含一个在 storage 事件触发时运行的事件处理程序。当更改存储时会触发事件处理程序。</p> <h3 id="语法"><a href="#语法" class="header-anchor">#</a> 语法</h3> <div class="language- extra-class"><pre class="language-text"><code>window.onstorage = function（）{...};
+                              
+window.onstorage = function(e) {
+  console.log(`The ${e.key}  key has been changed from ${e.oldValue}  to  ${e.newValue} .`);
+};
+
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>&lt;div id=&quot;app&quot;&gt;&lt;/div&gt;
+&lt;button id=&quot;tab&quot;&gt;新开 Tab&lt;/button&gt;
+&lt;button id=&quot;l-btn&quot;&gt;触发 LocalStorage 更新&lt;/button&gt;
+&lt;button id=&quot;s-btn&quot;&gt;触发 SessionStorage 更新&lt;/button&gt;
+&lt;script&gt;
+  window.onstorage = function(e) {
+    console.log(`The ${e.key}  key has been changed from ${e.oldValue}  to  ${e.newValue} .`);
+  };
+
+  document.getElementById('tab').onclick = function () {
+    window.open('xxx');
+  }
+
+  document.getElementById('l-btn').onclick = function () {
+    localStorage.setItem('storage1', Date.now())
+  }
+
+  document.getElementById('s-btn').onclick = function () {
+    sessionStorage.setItem('storage1', Date.now())
+ }
+&lt;/script&gt;
+
+</code></pre></div><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d705b1fcf685468ca1172c288f8e212a~tplv-k3u1fbpfcp-zoom-1.image" alt="onstorage.gif"></p> <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a6e172b8233a4d8b8afe9f17cb5b82b4~tplv-k3u1fbpfcp-zoom-1.image" alt="onstorage1.gif"></p> <h3 id="tips"><a href="#tips" class="header-anchor">#</a> Tips</h3> <ol><li>该事件不在导致数据变化的当前页面触发（如果浏览器同时打开一个域名下面的多个页面，当其中的一个页面改变 数据时，其他所有页面的 storage 事件会被触发，而原始页面并不触发 storage 事件）。</li> <li>sessionStorage（❎）不能触发 storage 事件 ， localStorage（✅）可以。</li> <li>如果修改的值未发生改变，将不会触发 onstorage 事件。</li> <li>优点：浏览器支持效果好、API直观、操作简单。缺点：部分浏览器隐身模式下，无法设置 localStorage。如safari，这样也就导致 onstrage 事件无法使用。</li></ol> <blockquote><p>除开少数情况，localStorage的兼容性不错，就当前国内的情况，已经基本没有问题了。localStorage 的原理很简单，浏览器为每个域名划出一块本地存储空间，用户网页可以通过 localStorage 命名空间进行读写。<img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a475fdf9867443c4baa1ddb91dacc1db~tplv-k3u1fbpfcp-zoom-1.image" alt="onstorage兼容性.png"></p></blockquote> <h2 id="broadcast-channel"><a href="#broadcast-channel" class="header-anchor">#</a> BroadCast Channel</h2> <p>BroadcastChannel 接口代理了一个命名频道，<strong>可以让指定 origin 下的任意 browsing context 来订阅它。它允许同源的不同浏览器窗口，Tab页，frame或者 iframe 下的不同文档之间相互通信</strong>。通过触发一个 message 事件，消息可以广播到所有监听了该频道的 BroadcastChannel 对象。</p> <p>说到 BroadCast Channel 不得不说一下 postMessage，他们二者的最大区别就在于 postMessage 更像是点对点的通信，而 BroadCast Channel 是广播的方式，点到面。</p> <h3 id="语法-2"><a href="#语法-2" class="header-anchor">#</a> 语法</h3> <div class="language- extra-class"><pre class="language-text"><code>// 创建
+const broadcastChannel = new BroadcastChannel('channelName');
+
+// 监听消息
+broadcastChannel.onmessage = function(e) {
+    console.log('监听消息:', e.data);
+};
+
+// 发送消息
+broadcastChannel.postMessage('测试：传送消息');
+
+// 关闭
+broadcastChannel.close();
+
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>&lt;div id=&quot;app&quot;&gt;&lt;/div&gt;
+  &lt;button id=&quot;tab&quot;&gt;新开 Tab&lt;/button&gt;
+  &lt;button id=&quot;l-btn&quot;&gt;发送消息&lt;/button&gt;
+  &lt;button id=&quot;s-btn&quot;&gt;关闭&lt;/button&gt;
+  &lt;script&gt;
+    // 创建
+    const broadcastChannel = new BroadcastChannel('channelName');
+
+    // 监听消息
+    broadcastChannel.onmessage = function(e) {
+        console.log('监听消息:', e.data);
+    };
+
+    document.getElementById('tab').onclick = function () {
+      window.open('xxx');
+    }
+
+    document.getElementById('l-btn').onclick = function () {
+      // 发送消息
+      broadcastChannel.postMessage('测试，传送消息，我发送消息啦。。。');
+    }
+
+    document.getElementById('s-btn').onclick = function () {
+      // 关闭
+      broadcastChannel.close();
+    }
+
+  &lt;/script&gt;
+
+</code></pre></div><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6851121a48714918be739dc8ad88aa47~tplv-k3u1fbpfcp-zoom-1.image" alt="Broadcast Channel.gif"></p> <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5648e81a30aa4611b6c262f49ae7fcd8~tplv-k3u1fbpfcp-zoom-1.image" alt="Broadcast Channel1.gif"></p> <h3 id="tips-2"><a href="#tips-2" class="header-anchor">#</a> Tips</h3> <ol><li>监听消息除了 .onmessage 这种方式，还可以 使用addEventListener来添加'message'监听，</li> <li>关闭除了使用 Broadcast Channel 实例为我们提供的 close 方法来关闭 Broadcast Channel。我们还可取消或者修改相应的'message'事件监听。两者是有区别的：取消'message'监听只是让页面不对广播消息进行响应，Broadcast Channel 仍然存在；而调用 close 方法会切断与 Broadcast Channel 的连接，浏览器才能够尝试回收该对象，因为此时浏览器才会知道用户已经不需要使用广播频道了。</li> <li>兼容性：如果不使用 IE 和 sf on iOS 浏览器，兼容性还是可以的。</li></ol> <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8a33f43cb3154d5082bcb4c4a1819ef0~tplv-k3u1fbpfcp-zoom-1.image" alt="BroadCast Channel兼容性.png"></p> <h2 id="service-worker"><a href="#service-worker" class="header-anchor">#</a> Service Worker</h2> <p>Service Worker 是一个可以长期运行在后台的 Worker，能够实现与页面的双向通信。多页面共享间的 Service Worker 可以共享，将 Service Worker 作为消息的处理中心（中央站）即可实现广播效果。</p> <h3 id="语法-3"><a href="#语法-3" class="header-anchor">#</a> 语法</h3> <div class="language- extra-class"><pre class="language-text"><code>&lt;div id=&quot;app&quot;&gt;&lt;/div&gt;
+&lt;button id=&quot;tab&quot;&gt;新开 Tab&lt;/button&gt;
+&lt;button id=&quot;l-btn&quot;&gt;发送消息&lt;/button&gt;
+&lt;script&gt;
+  /* 判断当前浏览器是否支持serviceWorker */
+  if ('serviceWorker' in navigator) {
+    /* 当页面加载完成就创建一个serviceWorker */
+    window.addEventListener('load', function () {
+      /* 创建并指定对应的执行内容 */
+      /* scope 参数是可选的，可以用来指定你想让 service worker 控制的内容的子目录。在这个例子里，我们指定了 '/'，表示 根网域下的所有内容。这也是默认值。*/
+      navigator.serviceWorker.register('./serviceWorker.js', { scope: './' })
+        .then(function (registration) {
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      })
+        .catch(function (err) {
+        console.log('ServiceWorker registration failed: ', err);
+      });
+    });
+
+    // 监听消息
+    navigator.serviceWorker.addEventListener('message', function (e) {
+      const data = e.data;
+      console.log('我接受到消息了：', data);
+    });
+
+    document.getElementById('l-btn').onclick = function () {
+      navigator.serviceWorker.controller &amp;&amp; navigator.serviceWorker.controller.postMessage('测试，传送消息，我发送消息啦。。。');
+    };
+  }
+&lt;/script&gt;
+
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>/* 监听安装事件，install 事件一般是被用来设置你的浏览器的离线缓存逻辑 */
+this.addEventListener('install', function (event) {
+  /* 通过这个方法可以防止缓存未完成，就关闭serviceWorker */
+  event.waitUntil(
+    /* 创建一个名叫V1的缓存版本 */
+    caches.open('v1').then(function (cache) {
+      /* 指定要缓存的内容，地址为相对于跟域名的访问路径 */
+      return cache.addAll(['./index.html']);
+    })
+  );
+});
+
+/* 注册fetch事件，拦截全站的请求 */
+this.addEventListener('fetch', function (event) {
+  event.respondWith(
+    // magic goes here
+
+    /* 在缓存中匹配对应请求资源直接返回 */
+    caches.match(event.request)
+  );
+});
+
+/* 监听消息，通知其他 Tab 页面 */
+this.addEventListener('message', function(event) {
+  this.clients.matchAll().then(function(clients) {
+    clients.forEach(function(client) {
+      // 这里的判断目的是过滤掉当前 Tab 页面，也可以使用 visibilityState 的状态来判断
+      if(!client.focused) {
+        client.postMessage(event.data)
+      }
+    })
+  })
+})
+
+</code></pre></div><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/93564ceb89b14fecb5ee1df19eb6f481~tplv-k3u1fbpfcp-zoom-1.image" alt="Service Worker.gif"></p> <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/09a67a15b1e542a7a828e9d1c9b5ecb5~tplv-k3u1fbpfcp-zoom-1.image" alt="Service Worker1.gif"></p> <h3 id="tips-3"><a href="#tips-3" class="header-anchor">#</a> Tips</h3> <ol><li>Service workers 本质上充当 Web 应用程序、浏览器与网络（可用时）之间的代理服务器。所以本质上来说 Service Worker 并不自动具备“广播通信”的功能，需要改造 Service Worker 添加些代码，将其改造成消息中转站。在 Service Worker 中监听了message事件，获取页面发送的信息。然后通过 self.clients.matchAll() 获取当前注册了 Service Worker 的所有页面，通过调用每个的 postMessage 方法，向页面发送消息。这样就把从一处（某个Tab页面）收到的消息通知给了其他页面。</li> <li>兼容性：IE 全军覆没，其他浏览器还行，整体来说一般。</li></ol> <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4c0477f909d3451e9155d1beabb1e30f~tplv-k3u1fbpfcp-zoom-1.image" alt="Service Worker兼容性.png"></p> <h2 id="open-opener"><a href="#open-opener" class="header-anchor">#</a> open &amp; opener</h2> <p>当我们 系统中通过 window.open 打开一个新页面时，window.open 方法会返回一个被打开页面的引用，而被打开页面则可以通过 window.opener 获取到打开它的页面的引用（当然这是在没有指定noopener的情况下）。</p> <h3 id="番外关于-noopener"><a href="#番外关于-noopener" class="header-anchor">#</a> 番外关于 noopener</h3> <div class="language- extra-class"><pre class="language-text"><code>&lt;a href=&quot;https://google.com&quot; target=&quot;_blank&quot;&gt;Google&lt;/a&gt;
+
+</code></pre></div><p>我们在系统中经常会这样使用 a 标签跳转到第三方网站，有时，当您单击网站上的链接时，该链接将在新选项卡中打开，但旧选项卡也会被重定向到其他网络钓鱼网站，它会要求您登录或开始将一些恶意软件下载到您的设备。这样存在一定的安全隐患，此时在新打开的页面中可通过 window.opener 获取到源页面的 window 对象， 这就埋下了安全隐患。 比如：</p> <ul><li>你自己的网站 A，点击如上链接打开了第三方网站 B。</li> <li>此时网站 B 可以通过 window.opener 获取到 A 网站的 window 对象。</li> <li>然后通过 window.opener.location.href = '<a href="https://link.juejin.cn/?target=http%3A%2F%2Fwww.baidu.com" title="http://www.baidu.com" target="_blank" rel="noopener noreferrer">www.baidu.com<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>' 这种形式跳转到一个钓鱼网站，泄露用户信息。</li></ul> <p>为了避免这样的问题，可以添加引入了 rel=&quot;noopener&quot; 属性， 这样新打开的页面便获取不到来源页面的 window 对象了， 此时 window.opener 的值是 null。</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;a href=&quot;https://google.com&quot; rel=&quot;noopener&quot; target=&quot;_blank&quot;&gt;Google&lt;/a&gt;
+
+</code></pre></div><p>但是由于一些老的浏览器并不支持 noopener ，通常 noopener 和 noreferrer 会同时设置， rel=&quot;noopener noreferrer&quot;。</p> <h3 id="语法-4"><a href="#语法-4" class="header-anchor">#</a> 语法</h3> <p>回到主题，使用 window.opener 如何实现跨页面通信了。</p> <ul><li>收集对象</li></ul> <div class="language- extra-class"><pre class="language-text"><code>// 收集 window 对象：单个打开页面
+const windowOpen = window.open('xxx');
+
+// 收集 window 对象：多个打开页面，打开一个页面就需要将打开的 window 对象收集起来，以便于发布广播
+const windowOpens = [];
+const windowOpen = window.open('xxx');
+windowOpens.push(windowOpen);
+
+</code></pre></div><ul><li>发送消息</li></ul> <div class="language- extra-class"><pre class="language-text"><code>// 发送消息：单个页面
+windowOpen.postMessage(data);
+
+// 发送消息：多个页面
+windowOpens.forEach((window) =&gt; window.postMessage(data));
+接受消息，对于接受消息来说，可能只是接受消息，但是可能接受消息的页面也打开了页面，这种情况需要将消息继续传递下去
+window.addEventListener('message', function (e) {
+    const data = e.data;
+    console.log(data);
+    windowOpens.forEach((window) =&gt; window.postMessage(data));
+});
+
+</code></pre></div><h3 id="tips-4"><a href="#tips-4" class="header-anchor">#</a> Tips</h3> <ol><li>在收集到的 window 对象中，可能有的 Tab 窗口被关闭了，这种情况下的 Tab 不需要进行消息传递。</li> <li>对于接受消息的一方来说，需要继续传递消息，但是这里存在一个问题就是消息回传，可能出现两者之间消息的死循环传递。</li> <li>这种方式，类似击鼓传花，一个传一个，传递的消息从前往后，一条锁链。</li> <li>但是如果页面不是通过一个页面打开的，而且直接打开的，或者从三方网站跳转的，那这条锁链将断开。<strong>所以这种方式基本只做了解，问题太多，可不做参考。</strong></li></ol> <p>完善的代码如下：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;button id=&quot;tab&quot;&gt;新开 Tab&lt;/button&gt;
+&lt;button id=&quot;l-btn&quot;&gt;发送消息&lt;/button&gt;
+&lt;script&gt;
+  // 收集 window 对象：多个打开页面，打开一个页面就需要将打开的 window 对象收集起来，以便于发布广播
+  let windowOpens = [];
+  document.getElementById('tab').onclick = function () {
+    // IP 地址为本地的服务
+    const windowOpen = window.open('http://127.0.0.1:5500/CrossPageCommunication/open&amp;opener.html');
+    windowOpens.push(windowOpen);
+  }
+
+  document.getElementById('l-btn').onclick = function () {
+    const data = {};
+    console.log(windowOpens);
+    // 发送消息之前，先进行已关闭 Tab 的过滤
+    windowOpens = windowOpens.filter((window) =&gt; !window.closed);
+
+    if (windowOpens.length &gt; 0) {
+      // 数据打一个标记
+      data.tag = false;
+      data.message = '测试，传送消息，我发送消息啦。。。'
+      windowOpens.forEach((window) =&gt; window.postMessage(data));
+    }
+    if (window.opener &amp;&amp; !window.opener.closed) {
+      data.tag = true;
+      window.opener.postMessage(data);
+    }
+  }
+
+  window.addEventListener('message', function (e) {
+    const data = e.data;
+    console.log('我接受到消息了：', data.message);
+    // 避免消息回传
+    if (window.opener &amp;&amp; !window.opener.closed &amp;&amp; data.tag) {
+      window.opener.postMessage(data);
+    }
+    // 过滤掉已经关闭的 Tab
+    windowOpens = windowOpens.filter((window) =&gt; !window.closed);
+    // 避免消息回传
+    if (windowOpens &amp;&amp; !data.tag) {
+      windowOpens.forEach((window) =&gt; window.postMessage(data));
+    }
+  });
+&lt;/script&gt;
+
+</code></pre></div><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6f63a0081c5c4052b4cf27a5be90e599~tplv-k3u1fbpfcp-zoom-1.image" alt="image.png"></p> <h2 id="sharedworker"><a href="#sharedworker" class="header-anchor">#</a> SharedWorker</h2> <p>SharedWorker 接口代表一种特定类型的 worker，可以从几个浏览上下文中访问，例如几个窗口、iframe 或其他 worker。它们实现一个不同于普通 worker 的接口，具有不同的全局作用域, SharedWorkerGlobalScope。</p> <h3 id="语法-5"><a href="#语法-5" class="header-anchor">#</a> 语法</h3> <div class="language- extra-class"><pre class="language-text"><code>// 创建共享线程对象
+let worker = new SharedWorker(&quot;./sharedWorker.js&quot;);
+
+// 手动启动端口
+worker.port.start();
+
+// 处理从 worker 返回的消息
+ worker.port.onmessage = function (val) {
+    ...
+ };
+
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>&lt;button id=&quot;tab&quot;&gt;新开 Tab&lt;/button&gt;
+&lt;button id=&quot;l-btn&quot;&gt;点赞&lt;/button&gt;
+&lt;p&gt;&lt;span id=&quot;likedCount&quot;&gt;还没有人点赞&lt;/span&gt;&lt;/span&gt;👍&lt;/p&gt;
+&lt;script&gt;
+ let likedCountEl = document.querySelector(&quot;#likedCount&quot;);
+
+ let worker = new SharedWorker(&quot;./sharedWorker.js&quot;);
+
+ console.log('worker.port', worker.port);
+
+ worker.port.start();
+
+ // 监听消息
+ worker.port.onmessage = function (val) {
+   likedCountEl.innerHTML = val.data;
+ };
+
+ document.getElementById('tab').onclick = function () {
+   // IP 地址为本地起的服务
+   const windowOpen = window.open('http://127.0.0.1:5500/CrossPageCommunication/sharedWorker/index.html');
+ }
+
+ document.getElementById('l-btn').onclick = function () {
+   worker.port.postMessage('点赞了');
+ };
+&lt;/script&gt;
+// ./sharedWorker.js
+let a = 666;
+
+console.log('shared-worker');
+onconnect = function (e) {
+ const port = e.ports[0];
+ console.log('shared-worker connect');
+
+ // 不能使用这种方式监听事件
+ // port.addEventListener('message', () =&gt; {
+ //   port.postMessage(++a);
+ // });
+
+ port.postMessage(a);
+
+ port.onmessage = () =&gt; {
+   port.postMessage(++a);
+ };
+ console.log('当前点赞次数:', a);
+};
+
+</code></pre></div><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fa5d1912da564ad3ae180b8e1fd85b97~tplv-k3u1fbpfcp-zoom-1.image" alt="image.png"></p> <h3 id="tips-5"><a href="#tips-5" class="header-anchor">#</a> Tips</h3> <ol><li>如果要使 SharedWorker 连接到多个不同的页面，这些页面必须是同源的（相同的协议、host 以及端口）。</li> <li>Shared Worker 在实现跨页面通信时的，它无法主动通知所有页面，需要刷新页面或者是定时任务来检查是否有新的消息。在例子中我是手动刷新的，当然可以使用 setInterval 来定时刷新。</li> <li>如果需要调试 SharedWorker，使用 chrome://inspect/#workers</li></ol> <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/8bcd88e763984dedaa06d959ccab62df~tplv-k3u1fbpfcp-zoom-1.image" alt="image.png"></p> <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ce57702bb83d4b188bec2192054cbaa6~tplv-k3u1fbpfcp-zoom-1.image" alt="image.png"></p> <ol><li>sharedWorker.js 不能使用 .addEventListener 来监听 message 事件，监听无效。 兼容性一般。</li></ol> <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/952b571f96864f19a19c07045994789f~tplv-k3u1fbpfcp-zoom-1.image" alt="image.png"></p> <h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p>在上面列举了五种前端跨页面通信的方式，当然对前端来说远远不止这五种方式，还有其他方案例如：使用 hashchange、cookie、Websocket、postMessage 都是可以的。文章中只是列举了部分。并且文章中的方案都是针对同源的 Tab。</p> <p>文章的前三种解决方式不论是 Broadcast Channel，还是 Service Worker ，或是 storage 事件，其都是“广播模式”：一个页面将消息通知给一个“中央站”，再由“中央站”通知给各个页面。</p> <p>而对于 open &amp; opener 这种方式，类似击鼓传花，一个传一个，传递的消息从前往后，一条锁链。但是如果页面不是通过一个页面打开的，而且直接打开的，或者从三方网站跳转的，那这条锁链将断开。</p> <p>Shared Worker 的最大问题在于实现跨页面通信时的，它无法主动通知所有页面，需要刷新页面或者是定时任务来检查是否有新的消息，也就是需要配合轮询来使用。</p> <p>最终在我们团队对于前端跨页面通信最后选择的解决方案是使用 onstorage，主要考量的三个方面：</p> <ul><li>兼容性。浏览器支持度。</li> <li>通用性。能否覆盖需求、是否具有拓展性。</li> <li>便捷性。开发便捷程度。</li></ul> <p>其他方案在这三个方面来说都或多或少存在一些美中不足。</p> <p><a href="https://juejin.cn/post/7081516964400594951" target="_blank" rel="noopener noreferrer">转载于掘金<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.e33ebccf.js" defer></script><script src="/assets/js/2.bae70891.js" defer></script><script src="/assets/js/19.69cd322f.js" defer></script>
+  </body>
+</html>
