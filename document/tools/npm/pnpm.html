@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>pnpm指定store目录 | wk-ui</title>
+    <meta name="generator" content="VuePress 1.9.8">
+    
+    <meta name="description" content="王先生的小屋">
+    
+    <link rel="preload" href="/assets/css/0.styles.4c3c4448.css" as="style"><link rel="preload" href="/assets/js/app.3eaf8d18.js" as="script"><link rel="preload" href="/assets/js/3.4210ba14.js" as="script"><link rel="preload" href="/assets/js/48.b52f06f4.js" as="script"><link rel="prefetch" href="/assets/js/10.c32ab82f.js"><link rel="prefetch" href="/assets/js/11.f7ec7020.js"><link rel="prefetch" href="/assets/js/12.81011caa.js"><link rel="prefetch" href="/assets/js/13.b9e1710c.js"><link rel="prefetch" href="/assets/js/14.2978e8e3.js"><link rel="prefetch" href="/assets/js/15.fdc28bb8.js"><link rel="prefetch" href="/assets/js/16.a2f69f3b.js"><link rel="prefetch" href="/assets/js/17.e0099440.js"><link rel="prefetch" href="/assets/js/18.cb9fec77.js"><link rel="prefetch" href="/assets/js/19.af4e74fe.js"><link rel="prefetch" href="/assets/js/2.39c06491.js"><link rel="prefetch" href="/assets/js/20.513f3897.js"><link rel="prefetch" href="/assets/js/21.0ca625f6.js"><link rel="prefetch" href="/assets/js/22.7e1bd743.js"><link rel="prefetch" href="/assets/js/23.e0448a2c.js"><link rel="prefetch" href="/assets/js/24.6f990fea.js"><link rel="prefetch" href="/assets/js/25.6dd71e27.js"><link rel="prefetch" href="/assets/js/26.dec9bd4a.js"><link rel="prefetch" href="/assets/js/27.381afa5b.js"><link rel="prefetch" href="/assets/js/28.0e875d5b.js"><link rel="prefetch" href="/assets/js/29.60c239df.js"><link rel="prefetch" href="/assets/js/30.d90c4c2f.js"><link rel="prefetch" href="/assets/js/31.e9858edf.js"><link rel="prefetch" href="/assets/js/32.601c3b0d.js"><link rel="prefetch" href="/assets/js/33.4fe73c76.js"><link rel="prefetch" href="/assets/js/34.aa73797b.js"><link rel="prefetch" href="/assets/js/35.6d656f50.js"><link rel="prefetch" href="/assets/js/36.0ba7e4cb.js"><link rel="prefetch" href="/assets/js/37.fa50df71.js"><link rel="prefetch" href="/assets/js/38.68acb41e.js"><link rel="prefetch" href="/assets/js/39.8b3f0634.js"><link rel="prefetch" href="/assets/js/4.8803613f.js"><link rel="prefetch" href="/assets/js/40.d3429d52.js"><link rel="prefetch" href="/assets/js/41.6bb16a9c.js"><link rel="prefetch" href="/assets/js/42.5d1032e4.js"><link rel="prefetch" href="/assets/js/43.c2c1778b.js"><link rel="prefetch" href="/assets/js/44.822a10fd.js"><link rel="prefetch" href="/assets/js/45.06b9d6a7.js"><link rel="prefetch" href="/assets/js/46.da014026.js"><link rel="prefetch" href="/assets/js/47.599bbfec.js"><link rel="prefetch" href="/assets/js/49.139d2176.js"><link rel="prefetch" href="/assets/js/5.9d2cc2e7.js"><link rel="prefetch" href="/assets/js/50.ee35e5d8.js"><link rel="prefetch" href="/assets/js/51.3c6d5641.js"><link rel="prefetch" href="/assets/js/52.a1c974ce.js"><link rel="prefetch" href="/assets/js/53.da19fd82.js"><link rel="prefetch" href="/assets/js/54.3c4e2c34.js"><link rel="prefetch" href="/assets/js/6.6e2e1f4d.js"><link rel="prefetch" href="/assets/js/7.ac591408.js"><link rel="prefetch" href="/assets/js/8.19db2b17.js"><link rel="prefetch" href="/assets/js/9.c335d4f0.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.4c3c4448.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">wk-ui</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/document/form/dialog.html" class="nav-link">
+  组件文档
+</a></div><div class="nav-item"><a href="/document/directive/permission.html" class="nav-link">
+  指令
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具" class="dropdown-title"><span class="title">工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="工具" class="mobile-dropdown-title"><span class="title">工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          git
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/document/tools/git/git-ssh.html" class="nav-link">
+  git解决方案
+</a></li></ul></li><li class="dropdown-item"><h4>
+          npm
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/document/tools/npm/nrm.html" class="nav-link">
+  nrm换源
+</a></li><li class="dropdown-subitem"><a href="/document/tools/npm/changeOrigin.html" class="nav-link">
+  npm手动换源
+</a></li><li class="dropdown-subitem"><a href="/document/tools/npm/pnpm.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  pnpm
+</a></li></ul></li><li class="dropdown-item"><h4>
+          eslint
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/document/tools/eslint/提交钩子.html" class="nav-link">
+  提交钩子
+</a></li><li class="dropdown-subitem"><a href="/document/tools/eslint/常见报错.html" class="nav-link">
+  常见报错
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="阅读" class="dropdown-title"><span class="title">阅读</span> <span class="arrow down"></span></button> <button type="button" aria-label="阅读" class="mobile-dropdown-title"><span class="title">阅读</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/read/正面教育.html" class="nav-link">
+  正面教育
+</a></li></ul></div></div><div class="nav-item"><a href="/document/skill/skill.html" class="nav-link">
+  开发技巧
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="utils" class="dropdown-title"><span class="title">utils</span> <span class="arrow down"></span></button> <button type="button" aria-label="utils" class="mobile-dropdown-title"><span class="title">utils</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/utils/vue.html" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/document/utils/媒体.html" class="nav-link">
+  媒体
+</a></li><li class="dropdown-item"><!----> <a href="/document/utils/数据类型操作.html" class="nav-link">
+  数据类型操作
+</a></li><li class="dropdown-item"><!----> <a href="/document/utils/时间操作.html" class="nav-link">
+  时间操作
+</a></li><li class="dropdown-item"><!----> <a href="/document/utils/空间、坐标、地理.html" class="nav-link">
+  空间、坐标、地理
+</a></li><li class="dropdown-item"><!----> <a href="/document/utils/设备、环境、功能支持.html" class="nav-link">
+  设备、环境、功能支持
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="solution" class="dropdown-title"><span class="title">solution</span> <span class="arrow down"></span></button> <button type="button" aria-label="solution" class="mobile-dropdown-title"><span class="title">solution</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/solution/微前端/微前端.html" class="nav-link">
+  微前端
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/夸页面通信/夸页面通信.html" class="nav-link">
+  夸页面通信
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/换肤/换肤.html" class="nav-link">
+  换肤
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/大屏模块化/介绍.html" class="nav-link">
+  大屏设计器
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/高分辨率图片加载/高分辨率图片加载.html" class="nav-link">
+  高分辨率图片加载
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/录屏/录屏.html" class="nav-link">
+  录屏
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="play" class="dropdown-title"><span class="title">play</span> <span class="arrow down"></span></button> <button type="button" aria-label="play" class="mobile-dropdown-title"><span class="title">play</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/play/autoSendEmail/autoSendEmail.html" class="nav-link">
+  自动发送邮件
+</a></li></ul></div></div><div class="nav-item"><a href="/document/openai/openai.html" class="nav-link">
+  openai
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/document/form/dialog.html" class="nav-link">
+  组件文档
+</a></div><div class="nav-item"><a href="/document/directive/permission.html" class="nav-link">
+  指令
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具" class="dropdown-title"><span class="title">工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="工具" class="mobile-dropdown-title"><span class="title">工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          git
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/document/tools/git/git-ssh.html" class="nav-link">
+  git解决方案
+</a></li></ul></li><li class="dropdown-item"><h4>
+          npm
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/document/tools/npm/nrm.html" class="nav-link">
+  nrm换源
+</a></li><li class="dropdown-subitem"><a href="/document/tools/npm/changeOrigin.html" class="nav-link">
+  npm手动换源
+</a></li><li class="dropdown-subitem"><a href="/document/tools/npm/pnpm.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  pnpm
+</a></li></ul></li><li class="dropdown-item"><h4>
+          eslint
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/document/tools/eslint/提交钩子.html" class="nav-link">
+  提交钩子
+</a></li><li class="dropdown-subitem"><a href="/document/tools/eslint/常见报错.html" class="nav-link">
+  常见报错
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="阅读" class="dropdown-title"><span class="title">阅读</span> <span class="arrow down"></span></button> <button type="button" aria-label="阅读" class="mobile-dropdown-title"><span class="title">阅读</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/read/正面教育.html" class="nav-link">
+  正面教育
+</a></li></ul></div></div><div class="nav-item"><a href="/document/skill/skill.html" class="nav-link">
+  开发技巧
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="utils" class="dropdown-title"><span class="title">utils</span> <span class="arrow down"></span></button> <button type="button" aria-label="utils" class="mobile-dropdown-title"><span class="title">utils</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/utils/vue.html" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/document/utils/媒体.html" class="nav-link">
+  媒体
+</a></li><li class="dropdown-item"><!----> <a href="/document/utils/数据类型操作.html" class="nav-link">
+  数据类型操作
+</a></li><li class="dropdown-item"><!----> <a href="/document/utils/时间操作.html" class="nav-link">
+  时间操作
+</a></li><li class="dropdown-item"><!----> <a href="/document/utils/空间、坐标、地理.html" class="nav-link">
+  空间、坐标、地理
+</a></li><li class="dropdown-item"><!----> <a href="/document/utils/设备、环境、功能支持.html" class="nav-link">
+  设备、环境、功能支持
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="solution" class="dropdown-title"><span class="title">solution</span> <span class="arrow down"></span></button> <button type="button" aria-label="solution" class="mobile-dropdown-title"><span class="title">solution</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/solution/微前端/微前端.html" class="nav-link">
+  微前端
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/夸页面通信/夸页面通信.html" class="nav-link">
+  夸页面通信
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/换肤/换肤.html" class="nav-link">
+  换肤
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/大屏模块化/介绍.html" class="nav-link">
+  大屏设计器
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/高分辨率图片加载/高分辨率图片加载.html" class="nav-link">
+  高分辨率图片加载
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/录屏/录屏.html" class="nav-link">
+  录屏
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="play" class="dropdown-title"><span class="title">play</span> <span class="arrow down"></span></button> <button type="button" aria-label="play" class="mobile-dropdown-title"><span class="title">play</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/play/autoSendEmail/autoSendEmail.html" class="nav-link">
+  自动发送邮件
+</a></li></ul></div></div><div class="nav-item"><a href="/document/openai/openai.html" class="nav-link">
+  openai
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/document/tools/npm/changeOrigin.html" class="sidebar-link">手动换源</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/document/tools/npm/changeOrigin.html#包管理器换源" class="sidebar-link">包管理器换源</a></li><li class="sidebar-sub-header"><a href="/document/tools/npm/changeOrigin.html#npm全局换源" class="sidebar-link">npm全局换源</a></li><li class="sidebar-sub-header"><a href="/document/tools/npm/changeOrigin.html#单个依赖包换源" class="sidebar-link">单个依赖包换源</a></li><li class="sidebar-sub-header"><a href="/document/tools/npm/changeOrigin.html#修改npm依赖包的源码" class="sidebar-link">修改npm依赖包的源码</a></li><li class="sidebar-sub-header"><a href="/document/tools/npm/changeOrigin.html#修改发布源" class="sidebar-link">修改发布源</a></li></ul></li><li><a href="/document/tools/npm/nrm.html" class="sidebar-link">nrm换源</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/document/tools/npm/pnpm.html" aria-current="page" class="active sidebar-link">pnpm</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/document/tools/npm/pnpm.html#pnpm指定store目录" class="sidebar-link">pnpm指定store目录</a></li><li class="sidebar-sub-header"><a href="/document/tools/npm/pnpm.html#私有源" class="sidebar-link">私有源</a></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="pnpm指定store目录"><a href="#pnpm指定store目录" class="header-anchor">#</a> pnpm指定store目录</h2> <p>如果没有配置store，那么pnpm将自动在同一磁盘上创建store。如果您需要pnpm跨越多个硬盘或文件系统，需要配置store目录。</p> <p><code>pnpm config set store-dir ~/AppData/Local/pnpm/store</code></p> <h2 id="私有源"><a href="#私有源" class="header-anchor">#</a> 私有源</h2> <p>此外，pnpm 使用与 npm 相同的配置进行安装。 如果您有一个私有源并且 npm 被配置使用它， pnpm 应该不需要额外的配置也能够授权请求。</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/document/tools/npm/nrm.html" class="prev">
+        nrm换源
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.3eaf8d18.js" defer></script><script src="/assets/js/3.4210ba14.js" defer></script><script src="/assets/js/48.b52f06f4.js" defer></script>
+  </body>
+</html>
