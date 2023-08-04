@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>内存泄漏 | wk-ui</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    
+    <meta name="description" content="王先生的小屋">
+    
+    <link rel="preload" href="/assets/css/0.styles.81c6a691.css" as="style"><link rel="preload" href="/assets/js/app.7f164021.js" as="script"><link rel="preload" href="/assets/js/3.ddea4ccb.js" as="script"><link rel="preload" href="/assets/js/35.9272b2ae.js" as="script"><link rel="prefetch" href="/assets/js/10.008d71ee.js"><link rel="prefetch" href="/assets/js/11.c491c57b.js"><link rel="prefetch" href="/assets/js/12.6325ffbc.js"><link rel="prefetch" href="/assets/js/13.be5e30d7.js"><link rel="prefetch" href="/assets/js/14.cd90eca0.js"><link rel="prefetch" href="/assets/js/15.59aea6b7.js"><link rel="prefetch" href="/assets/js/16.b29b9ebc.js"><link rel="prefetch" href="/assets/js/17.e59e152b.js"><link rel="prefetch" href="/assets/js/18.f32aa4fa.js"><link rel="prefetch" href="/assets/js/19.d55a6030.js"><link rel="prefetch" href="/assets/js/2.0fc61b4c.js"><link rel="prefetch" href="/assets/js/20.cc3b0c36.js"><link rel="prefetch" href="/assets/js/21.f820a118.js"><link rel="prefetch" href="/assets/js/22.d75be56f.js"><link rel="prefetch" href="/assets/js/23.2cdb9875.js"><link rel="prefetch" href="/assets/js/24.5906f10b.js"><link rel="prefetch" href="/assets/js/25.9d7b7554.js"><link rel="prefetch" href="/assets/js/26.cf4f5971.js"><link rel="prefetch" href="/assets/js/27.789961ed.js"><link rel="prefetch" href="/assets/js/28.67e878aa.js"><link rel="prefetch" href="/assets/js/29.b61f0707.js"><link rel="prefetch" href="/assets/js/30.11a251be.js"><link rel="prefetch" href="/assets/js/31.dca56d9c.js"><link rel="prefetch" href="/assets/js/32.57d5c541.js"><link rel="prefetch" href="/assets/js/33.7c4a2f35.js"><link rel="prefetch" href="/assets/js/34.07f2957f.js"><link rel="prefetch" href="/assets/js/36.e1fe8a12.js"><link rel="prefetch" href="/assets/js/37.5958f939.js"><link rel="prefetch" href="/assets/js/38.07711600.js"><link rel="prefetch" href="/assets/js/39.3af7050a.js"><link rel="prefetch" href="/assets/js/4.f00918d8.js"><link rel="prefetch" href="/assets/js/40.e4f74ef4.js"><link rel="prefetch" href="/assets/js/41.7106e6d7.js"><link rel="prefetch" href="/assets/js/42.c94230b6.js"><link rel="prefetch" href="/assets/js/43.9a6445f7.js"><link rel="prefetch" href="/assets/js/44.9b3e709f.js"><link rel="prefetch" href="/assets/js/45.0326033f.js"><link rel="prefetch" href="/assets/js/46.6162a3fc.js"><link rel="prefetch" href="/assets/js/47.4d51285a.js"><link rel="prefetch" href="/assets/js/48.e16eb258.js"><link rel="prefetch" href="/assets/js/49.c755fad9.js"><link rel="prefetch" href="/assets/js/5.7390ebc2.js"><link rel="prefetch" href="/assets/js/50.630c7005.js"><link rel="prefetch" href="/assets/js/51.364ca5b2.js"><link rel="prefetch" href="/assets/js/52.7cf91ff3.js"><link rel="prefetch" href="/assets/js/53.4e8f5568.js"><link rel="prefetch" href="/assets/js/54.3d2a7363.js"><link rel="prefetch" href="/assets/js/55.b22014b2.js"><link rel="prefetch" href="/assets/js/56.9a7bcfdc.js"><link rel="prefetch" href="/assets/js/57.489e2f99.js"><link rel="prefetch" href="/assets/js/58.023c1e2b.js"><link rel="prefetch" href="/assets/js/59.1f443364.js"><link rel="prefetch" href="/assets/js/6.18ad4923.js"><link rel="prefetch" href="/assets/js/60.db7f60ca.js"><link rel="prefetch" href="/assets/js/61.37fec3b7.js"><link rel="prefetch" href="/assets/js/7.f1aa19ab.js"><link rel="prefetch" href="/assets/js/8.1e3ec633.js"><link rel="prefetch" href="/assets/js/9.7690308d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.81c6a691.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">wk-ui</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/document/form/dialog.html" class="nav-link">
+  组件文档
+</a></div><div class="nav-item"><a href="/document/directive/permission.html" class="nav-link">
+  指令
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具" class="dropdown-title"><span class="title">工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="工具" class="mobile-dropdown-title"><span class="title">工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          git
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/document/tools/git/git-ssh.html" class="nav-link">
+  git解决方案
+</a></li></ul></li><li class="dropdown-item"><h4>
+          npm
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/document/tools/npm/nrm.html" class="nav-link">
+  nrm换源
+</a></li><li class="dropdown-subitem"><a href="/document/tools/npm/changeOrigin.html" class="nav-link">
+  npm手动换源
+</a></li><li class="dropdown-subitem"><a href="/document/tools/npm/pnpm.html" class="nav-link">
+  pnpm
+</a></li></ul></li><li class="dropdown-item"><h4>
+          eslint
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/document/tools/eslint/提交钩子.html" class="nav-link">
+  提交钩子
+</a></li><li class="dropdown-subitem"><a href="/document/tools/eslint/常见报错.html" class="nav-link">
+  常见报错
+</a></li></ul></li><li class="dropdown-item"><h4>
+          自由
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/document/tools/free/梯子.html" class="nav-link">
+  梯子
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="阅读" class="dropdown-title"><span class="title">阅读</span> <span class="arrow down"></span></button> <button type="button" aria-label="阅读" class="mobile-dropdown-title"><span class="title">阅读</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/read/正面教育.html" class="nav-link">
+  正面教育
+</a></li></ul></div></div><div class="nav-item"><a href="/document/skill/skill.html" class="nav-link">
+  开发技巧
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具代码库" class="dropdown-title"><span class="title">工具代码库</span> <span class="arrow down"></span></button> <button type="button" aria-label="工具代码库" class="mobile-dropdown-title"><span class="title">工具代码库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/utils/vue.html" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/document/utils/媒体.html" class="nav-link">
+  媒体
+</a></li><li class="dropdown-item"><!----> <a href="/document/utils/数据类型操作.html" class="nav-link">
+  数据类型操作
+</a></li><li class="dropdown-item"><!----> <a href="/document/utils/时间操作.html" class="nav-link">
+  时间操作
+</a></li><li class="dropdown-item"><!----> <a href="/document/utils/空间、坐标、地理.html" class="nav-link">
+  空间、坐标、地理
+</a></li><li class="dropdown-item"><!----> <a href="/document/utils/设备、环境、功能支持.html" class="nav-link">
+  设备、环境、功能支持
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="解决方案" class="dropdown-title"><span class="title">解决方案</span> <span class="arrow down"></span></button> <button type="button" aria-label="解决方案" class="mobile-dropdown-title"><span class="title">解决方案</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/solution/内存泄漏/内存泄漏.html" class="nav-link">
+  内存泄漏
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/微前端/微前端.html" class="nav-link">
+  微前端
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/夸页面通信/夸页面通信.html" class="nav-link">
+  夸页面通信
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/换肤/换肤.html" class="nav-link">
+  换肤
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/大屏模块化/介绍.html" class="nav-link">
+  大屏设计器
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/高分辨率图片加载/高分辨率图片加载.html" class="nav-link">
+  高分辨率图片加载
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/录屏/录屏.html" class="nav-link">
+  录屏
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/中文字体子集化方案/中文字体子集化方案.html" class="nav-link">
+  中文字体子集化方案
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="游乐场" class="dropdown-title"><span class="title">游乐场</span> <span class="arrow down"></span></button> <button type="button" aria-label="游乐场" class="mobile-dropdown-title"><span class="title">游乐场</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/play/autoSendEmail/autoSendEmail.html" class="nav-link">
+  自动发送邮件
+</a></li></ul></div></div><div class="nav-item"><a href="/document/openai/openai.html" class="nav-link">
+  人工智能
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="生活" class="dropdown-title"><span class="title">生活</span> <span class="arrow down"></span></button> <button type="button" aria-label="生活" class="mobile-dropdown-title"><span class="title">生活</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/life/健康的作息时间.html" class="nav-link">
+  健康的作息时间
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/document/form/dialog.html" class="nav-link">
+  组件文档
+</a></div><div class="nav-item"><a href="/document/directive/permission.html" class="nav-link">
+  指令
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具" class="dropdown-title"><span class="title">工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="工具" class="mobile-dropdown-title"><span class="title">工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          git
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/document/tools/git/git-ssh.html" class="nav-link">
+  git解决方案
+</a></li></ul></li><li class="dropdown-item"><h4>
+          npm
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/document/tools/npm/nrm.html" class="nav-link">
+  nrm换源
+</a></li><li class="dropdown-subitem"><a href="/document/tools/npm/changeOrigin.html" class="nav-link">
+  npm手动换源
+</a></li><li class="dropdown-subitem"><a href="/document/tools/npm/pnpm.html" class="nav-link">
+  pnpm
+</a></li></ul></li><li class="dropdown-item"><h4>
+          eslint
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/document/tools/eslint/提交钩子.html" class="nav-link">
+  提交钩子
+</a></li><li class="dropdown-subitem"><a href="/document/tools/eslint/常见报错.html" class="nav-link">
+  常见报错
+</a></li></ul></li><li class="dropdown-item"><h4>
+          自由
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/document/tools/free/梯子.html" class="nav-link">
+  梯子
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="阅读" class="dropdown-title"><span class="title">阅读</span> <span class="arrow down"></span></button> <button type="button" aria-label="阅读" class="mobile-dropdown-title"><span class="title">阅读</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/read/正面教育.html" class="nav-link">
+  正面教育
+</a></li></ul></div></div><div class="nav-item"><a href="/document/skill/skill.html" class="nav-link">
+  开发技巧
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具代码库" class="dropdown-title"><span class="title">工具代码库</span> <span class="arrow down"></span></button> <button type="button" aria-label="工具代码库" class="mobile-dropdown-title"><span class="title">工具代码库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/utils/vue.html" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/document/utils/媒体.html" class="nav-link">
+  媒体
+</a></li><li class="dropdown-item"><!----> <a href="/document/utils/数据类型操作.html" class="nav-link">
+  数据类型操作
+</a></li><li class="dropdown-item"><!----> <a href="/document/utils/时间操作.html" class="nav-link">
+  时间操作
+</a></li><li class="dropdown-item"><!----> <a href="/document/utils/空间、坐标、地理.html" class="nav-link">
+  空间、坐标、地理
+</a></li><li class="dropdown-item"><!----> <a href="/document/utils/设备、环境、功能支持.html" class="nav-link">
+  设备、环境、功能支持
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="解决方案" class="dropdown-title"><span class="title">解决方案</span> <span class="arrow down"></span></button> <button type="button" aria-label="解决方案" class="mobile-dropdown-title"><span class="title">解决方案</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/solution/内存泄漏/内存泄漏.html" class="nav-link">
+  内存泄漏
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/微前端/微前端.html" class="nav-link">
+  微前端
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/夸页面通信/夸页面通信.html" class="nav-link">
+  夸页面通信
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/换肤/换肤.html" class="nav-link">
+  换肤
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/大屏模块化/介绍.html" class="nav-link">
+  大屏设计器
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/高分辨率图片加载/高分辨率图片加载.html" class="nav-link">
+  高分辨率图片加载
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/录屏/录屏.html" class="nav-link">
+  录屏
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/中文字体子集化方案/中文字体子集化方案.html" class="nav-link">
+  中文字体子集化方案
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="游乐场" class="dropdown-title"><span class="title">游乐场</span> <span class="arrow down"></span></button> <button type="button" aria-label="游乐场" class="mobile-dropdown-title"><span class="title">游乐场</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/play/autoSendEmail/autoSendEmail.html" class="nav-link">
+  自动发送邮件
+</a></li></ul></div></div><div class="nav-item"><a href="/document/openai/openai.html" class="nav-link">
+  人工智能
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="生活" class="dropdown-title"><span class="title">生活</span> <span class="arrow down"></span></button> <button type="button" aria-label="生活" class="mobile-dropdown-title"><span class="title">生活</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/life/健康的作息时间.html" class="nav-link">
+  健康的作息时间
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>内存泄漏</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/document/solution/内存泄漏/内存泄漏.html" class="active sidebar-link">内存泄漏</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/document/solution/内存泄漏/内存泄漏.html#垃圾回收-gc" class="sidebar-link">垃圾回收 GC</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/document/solution/内存泄漏/内存泄漏.html#标记清除-javascript中主流的垃圾回收算法" class="sidebar-link">标记清除(JavaScript中主流的垃圾回收算法)</a></li><li class="sidebar-sub-header"><a href="/document/solution/内存泄漏/内存泄漏.html#引用计数" class="sidebar-link">引用计数</a></li></ul></li><li class="sidebar-sub-header"><a href="/document/solution/内存泄漏/内存泄漏.html#什么是内存泄漏" class="sidebar-link">什么是内存泄漏</a></li><li class="sidebar-sub-header"><a href="/document/solution/内存泄漏/内存泄漏.html#引起内存泄漏的原因" class="sidebar-link">引起内存泄漏的原因</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/document/solution/内存泄漏/内存泄漏.html#意外的全局变量" class="sidebar-link">意外的全局变量</a></li><li class="sidebar-sub-header"><a href="/document/solution/内存泄漏/内存泄漏.html#闭包引起的内存泄漏" class="sidebar-link">闭包引起的内存泄漏</a></li><li class="sidebar-sub-header"><a href="/document/solution/内存泄漏/内存泄漏.html#没有清理的-dom-元素引用" class="sidebar-link">没有清理的 DOM 元素引用</a></li><li class="sidebar-sub-header"><a href="/document/solution/内存泄漏/内存泄漏.html#被遗忘的定时器或者回调" class="sidebar-link">被遗忘的定时器或者回调</a></li></ul></li><li class="sidebar-sub-header"><a href="/document/solution/内存泄漏/内存泄漏.html#vue-中容易出现内存泄露的几种情况" class="sidebar-link">vue 中容易出现内存泄露的几种情况</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/document/solution/内存泄漏/内存泄漏.html#全局变量造成的内存泄露" class="sidebar-link">全局变量造成的内存泄露</a></li><li class="sidebar-sub-header"><a href="/document/solution/内存泄漏/内存泄漏.html#监听在-window-body-等事件没有解绑" class="sidebar-link">监听在 window/body 等事件没有解绑</a></li><li class="sidebar-sub-header"><a href="/document/solution/内存泄漏/内存泄漏.html#绑在-eventbus-的事件没有解绑" class="sidebar-link">绑在 EventBus 的事件没有解绑</a></li><li class="sidebar-sub-header"><a href="/document/solution/内存泄漏/内存泄漏.html#echarts" class="sidebar-link">Echarts</a></li><li class="sidebar-sub-header"><a href="/document/solution/内存泄漏/内存泄漏.html#v-if-指令产生的内存泄露" class="sidebar-link">v-if 指令产生的内存泄露</a></li><li class="sidebar-sub-header"><a href="/document/solution/内存泄漏/内存泄漏.html#es6-防止内存泄漏" class="sidebar-link">ES6 防止内存泄漏</a></li></ul></li></ul></li><li><a href="/document/solution/内存泄漏/chrome性能工具使用/chrome性能工具使用.html" class="sidebar-link">chrome性能、内存工具使用</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/document/solution/内存泄漏/chrome性能工具使用/chrome性能工具使用.html#性能工具-判断是否产生内存泄漏" class="sidebar-link">性能工具---判断是否产生内存泄漏</a></li><li class="sidebar-sub-header"><a href="/document/solution/内存泄漏/chrome性能工具使用/chrome性能工具使用.html#内存工具-查找内存泄漏的位置" class="sidebar-link">内存工具---查找内存泄漏的位置</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/document/solution/内存泄漏/chrome性能工具使用/chrome性能工具使用.html#内存快照" class="sidebar-link">内存快照</a></li><li class="sidebar-sub-header"><a href="/document/solution/内存泄漏/chrome性能工具使用/chrome性能工具使用.html#分配时间轴" class="sidebar-link">分配时间轴</a></li><li class="sidebar-sub-header"><a href="/document/solution/内存泄漏/chrome性能工具使用/chrome性能工具使用.html#抽样分析" class="sidebar-link">抽样分析</a></li></ul></li><li class="sidebar-sub-header"><a href="/document/solution/内存泄漏/chrome性能工具使用/chrome性能工具使用.html#chrome任务管理器" class="sidebar-link">chrome任务管理器</a></li><li class="sidebar-sub-header"><a href="/document/solution/内存泄漏/chrome性能工具使用/chrome性能工具使用.html#性能监视器" class="sidebar-link">性能监视器</a></li><li class="sidebar-sub-header"><a href="/document/solution/内存泄漏/chrome性能工具使用/chrome性能工具使用.html#实例分析" class="sidebar-link">实例分析</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="内存泄漏"><a href="#内存泄漏" class="header-anchor">#</a> 内存泄漏</h1> <p>接处警页面偶现卡死、崩溃，特别是打开页面较久的时候发生概率较高。打开任务管理器，看到内存占有率已经很高了，初步判断可能存在内存泄漏的情况。下面排查内存泄漏的原因。</p> <p>系统进程不再用到的内存，没有及时释放，就叫做内存泄漏（memory leak）。当内存占用越来越高，轻则影响系统性能，重则导致进程崩溃。Chrome 限制了浏览器所能使用的内存极限。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 当前页面所能使用的最大堆内存，超过页面崩溃报内存错误，以字节计算。</span>
+performance<span class="token punctuation">.</span>memory<span class="token punctuation">.</span>jsHeapSizeLimit
+
+<span class="token comment">// 已分配的堆体积，以字节计算。</span>
+performance<span class="token punctuation">.</span>memory<span class="token punctuation">.</span>totalJSHeapSize
+
+<span class="token comment">// 当前 JS 堆活跃段（segment）的体积，以字节计算。</span>
+performance<span class="token punctuation">.</span>memory<span class="token punctuation">.</span>usedJSHeapSize
+</code></pre></div><h2 id="垃圾回收-gc"><a href="#垃圾回收-gc" class="header-anchor">#</a> 垃圾回收 GC</h2> <h3 id="标记清除-javascript中主流的垃圾回收算法"><a href="#标记清除-javascript中主流的垃圾回收算法" class="header-anchor">#</a> 标记清除(JavaScript中主流的垃圾回收算法)</h3> <p>JS垃圾回收机制：当一个变量没有被其他变量或属性引用的时候，认定为垃圾，堆会被释放。</p> <p>当变量进入执行环境是，就标记这个变量为&quot;进入环境&quot;。进入环境的变量所占用的内存就不能释放，当变量离开环境时，则将其标记为&quot;离开环境&quot;（例如：一段script脚本、vue实例中的script标签内容等）</p> <p>垃圾回收程序运行的时候，会标记内存中存储的所有变量。然后，它会将所有在上下文中的变量，以及被在上下文中的变量引用的变量的标记去掉</p> <p>在此之后再被加上标记的变量就是待删除的了，原因是任何在上下文中的变量都访问不到它们了</p> <p>随后垃圾回收程序做一次内存清理，销毁带标记的所有值并收回它们的内存</p> <h3 id="引用计数"><a href="#引用计数" class="header-anchor">#</a> 引用计数</h3> <p>语言引擎有一张&quot;引用表&quot;，保存了内存里面所有的资源（通常是各种值）的引用次数。如果一个值的引用次数是0，就表示这个值不再用到了，因此可以将这块内存释放</p> <p>如果一个值不再需要了，引用数却不为0，垃圾回收机制无法释放这块内存，从而导致内存泄漏</p> <div class="language- extra-class"><pre class="language-text"><code>const arr = [1, 2, 3, 4]
+console.log('hello world')
+</code></pre></div><p>下面代码中，数组[1, 2, 3, 4]是一个值，会占用内存。变量arr是仅有的对这个值的引用，因此引用次数为1。尽管后面的代码没有用到arr，它还是会持续占用内存</p> <p>如果需要这块内存被垃圾回收机制释放，只需要设置如下：</p> <div class="language- extra-class"><pre class="language-text"><code>arr = null
+</code></pre></div><p>通过设置arr为null，就解除了对数组[1,2,3,4]的引用，引用次数变为 0，就被垃圾回收了</p> <h2 id="什么是内存泄漏"><a href="#什么是内存泄漏" class="header-anchor">#</a> 什么是内存泄漏</h2> <p>变量在脱离上下文环境后或者业务逻辑不需要后，还存在引用关系，即：内存泄漏。</p> <h2 id="引起内存泄漏的原因"><a href="#引起内存泄漏的原因" class="header-anchor">#</a> 引起内存泄漏的原因</h2> <h3 id="意外的全局变量"><a href="#意外的全局变量" class="header-anchor">#</a> 意外的全局变量</h3> <p>由于 js 对未声明变量的处理方式是在全局对象上创建该变量的引用。如果在浏览器中，全局对象就是 window 对象。变量在窗口关闭或重新刷新页面之前都不会被释放，如果未声明的变量缓存大量的数据，就会导致内存泄露。</p> <ul><li>未声明变量</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  a <span class="token operator">=</span> <span class="token string">'global variable'</span>
+<span class="token punctuation">}</span>
+<span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><ul><li>使用 this 创建的变量(this 的指向是 window)。</li></ul> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>a <span class="token operator">=</span> <span class="token string">'global variable'</span>
+<span class="token punctuation">}</span>
+<span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div><p>解决方法：</p> <ul><li>避免创建全局变量</li> <li>使用严格模式,在 JavaScript 文件头部或者函数的顶部加上 <code>use strict</code>。</li></ul> <h3 id="闭包引起的内存泄漏"><a href="#闭包引起的内存泄漏" class="header-anchor">#</a> 闭包引起的内存泄漏</h3> <p>原因：闭包可以读取函数内部的变量，然后让这些变量始终保存在内存中。如果在使用结束后没有将局部变量清除，就可能导致内存泄露。</p> <div class="language-JS extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">outer</span><span class="token punctuation">(</span><span class="token parameter">x</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token keyword">function</span> <span class="token function">inner</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    count <span class="token operator">+=</span> x<span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> inner<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> add <span class="token operator">=</span> <span class="token function">outer</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><div class="language-JS extra-class"><pre class="language-js"><code><span class="token comment">//创建一个防抖函数debounce</span>
+<span class="token keyword">function</span> <span class="token function">debounce</span><span class="token punctuation">(</span><span class="token parameter">fn<span class="token punctuation">,</span> delay</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 1.定义一个定时器, 保存上一次的定时器</span>
+  <span class="token keyword">let</span> timer <span class="token operator">=</span> <span class="token keyword">null</span>
+
+  <span class="token comment">// 2.真正执行的函数</span>
+  <span class="token keyword">const</span> <span class="token function-variable function">_debounce</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 取消上一次的定时器</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>timer<span class="token punctuation">)</span> <span class="token function">clearTimeout</span><span class="token punctuation">(</span>timer<span class="token punctuation">)</span>
+    <span class="token comment">// 延迟执行</span>
+    timer <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 外部传入的真正要执行的函数</span>
+      <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> delay<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">return</span> _debounce
+<span class="token punctuation">}</span>
+</code></pre></div><p>解决：将事件处理函数定义在外部，解除闭包，或者在定义事件处理函数的外部函数中。</p> <p>比如：在循环中的函数表达式，能复用最好放到循环外面。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// bad</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> k <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> k <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> k<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> <span class="token function-variable function">t</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">a</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 创建了10次  函数对象。</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">t</span><span class="token punctuation">(</span>k<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// good</span>
+<span class="token keyword">function</span> <span class="token function">t</span><span class="token punctuation">(</span><span class="token parameter">a</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> k <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> k <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> k<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">t</span><span class="token punctuation">(</span>k<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+t <span class="token operator">=</span> <span class="token keyword">null</span>
+</code></pre></div><h3 id="没有清理的-dom-元素引用"><a href="#没有清理的-dom-元素引用" class="header-anchor">#</a> 没有清理的 DOM 元素引用</h3> <p>原因：虽然别的地方删除了，但是对象中还存在对 dom 的引用。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 在对象中引用DOM</span>
+<span class="token keyword">var</span> elements <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">btn</span><span class="token operator">:</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'btn'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">doSomeThing</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  elements<span class="token punctuation">.</span>btn<span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">removeBtn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 将body中的btn移除, 也就是移除 DOM树中的btn</span>
+  document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">removeChild</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'btn'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token comment">// 但是此时全局变量elements还是保留了对btn的引用, btn还是存在于内存中,不能被GC回收</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>解决方法：手动删除，<code>elements.btn = null</code>。</p> <h3 id="被遗忘的定时器或者回调"><a href="#被遗忘的定时器或者回调" class="header-anchor">#</a> 被遗忘的定时器或者回调</h3> <p>定时器中有 dom 的引用，即使 dom 删除了，但是定时器还在，所以内存中还是有这个 dom。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 定时器</span>
+<span class="token keyword">var</span> serverData <span class="token operator">=</span> <span class="token function">loadData</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> renderer <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'renderer'</span><span class="token punctuation">)</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>renderer<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    renderer<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>serverData<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">5000</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 监听</span>
+<span class="token keyword">var</span> btn <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'btn'</span><span class="token punctuation">)</span>
+<span class="token keyword">function</span> <span class="token function">onClick</span><span class="token punctuation">(</span><span class="token parameter">element</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  element<span class="token punctuation">.</span>innerHTMl <span class="token operator">=</span> <span class="token string">&quot;I'm innerHTML&quot;</span>
+<span class="token punctuation">}</span>
+btn<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> onClick<span class="token punctuation">)</span>
+</code></pre></div><p>解决方法：</p> <ul><li>手动删除定时器和 dom。</li> <li>removeEventListener 移除事件监听</li></ul> <h2 id="vue-中容易出现内存泄露的几种情况"><a href="#vue-中容易出现内存泄露的几种情况" class="header-anchor">#</a> vue 中容易出现内存泄露的几种情况</h2> <p>在 Vue SPA 开发应用，那么就更要当心内存泄漏的问题。因为在 SPA 的设计中，用户使用它时是不需要刷新浏览器的，所以 JavaScript 应用需要自行清理组件来确保垃圾回收以预期的方式生效。因此开发过程中，你需要时刻警惕内存泄漏的问题。</p> <h3 id="全局变量造成的内存泄露"><a href="#全局变量造成的内存泄露" class="header-anchor">#</a> 全局变量造成的内存泄露</h3> <p>声明的全局变量在切换页面的时候没有清空</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>home<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>这里是首页<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+  <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+    <span class="token function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      window<span class="token punctuation">.</span>test <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 此处在全局window对象中引用了本页面的dom对象</span>
+        <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'home'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">node</span><span class="token operator">:</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'home'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>解决方案:在页面卸载的时候顺便处理掉该引用。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">destroyed</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  window<span class="token punctuation">.</span>test <span class="token operator">=</span> <span class="token keyword">null</span> <span class="token comment">// 页面卸载的时候解除引用</span>
+ <span class="token punctuation">}</span>
+</code></pre></div><h3 id="监听在-window-body-等事件没有解绑"><a href="#监听在-window-body-等事件没有解绑" class="header-anchor">#</a> 监听在 window/body 等事件没有解绑</h3> <p>特别注意 window.addEventListener 之类的时间监听</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">&quot;home&quot;</span><span class="token operator">&gt;</span>这里是首页<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
+
+<span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+<span class="token function">mounted</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'resize'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>func<span class="token punctuation">)</span> <span class="token comment">// window对象引用了home页面的方法</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+</code></pre></div><p>解决方法:在页面销毁的时候，顺便解除引用，释放内存</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">mounted</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'resize'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>func<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token function">beforeDestroy</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  window<span class="token punctuation">.</span><span class="token function">removeEventListener</span><span class="token punctuation">(</span><span class="token string">'resize'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>func<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="绑在-eventbus-的事件没有解绑"><a href="#绑在-eventbus-的事件没有解绑" class="header-anchor">#</a> 绑在 EventBus 的事件没有解绑</h3> <p>举个例子</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token operator">&lt;</span>template<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">&quot;home&quot;</span><span class="token operator">&gt;</span>这里是首页<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">&gt;</span>
+
+<span class="token operator">&lt;</span>script<span class="token operator">&gt;</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token function">mounted</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">this</span><span class="token punctuation">.</span>$EventBus<span class="token punctuation">.</span><span class="token function">$on</span><span class="token punctuation">(</span><span class="token string">'homeTask'</span><span class="token punctuation">,</span> <span class="token parameter">res</span> <span class="token operator">=&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">func</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>
+</code></pre></div><p>解决方法:在页面卸载的时候也可以考虑解除引用</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">mounted</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token keyword">this</span><span class="token punctuation">.</span>$EventBus<span class="token punctuation">.</span><span class="token function">$on</span><span class="token punctuation">(</span><span class="token string">'homeTask'</span><span class="token punctuation">,</span> <span class="token parameter">res</span> <span class="token operator">=&gt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">func</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token function">destroyed</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token keyword">this</span><span class="token punctuation">.</span>$EventBus<span class="token punctuation">.</span><span class="token function">$off</span><span class="token punctuation">(</span><span class="token string">'homeTask'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="echarts"><a href="#echarts" class="header-anchor">#</a> Echarts</h3> <p>Echarts常用方法处理：</p> <ol><li>实例挂在到vue上</li> <li>监听大小变化重新渲染</li> <li>Echarts自带的on监听方法</li></ol> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>echart <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$echarts<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>$el<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>echart<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">&quot;finished&quot;</span><span class="token punctuation">,</span><span class="token keyword">this</span><span class="token punctuation">.</span>finished<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">&quot;resize&quot;</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>resize<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token function">beforeDestroy</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>echart<span class="token punctuation">.</span><span class="token function">dispose</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>echart<span class="token punctuation">.</span><span class="token function">off</span><span class="token punctuation">(</span><span class="token string">&quot;finished&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  window<span class="token punctuation">.</span><span class="token function">removeEventListener</span><span class="token punctuation">(</span><span class="token string">&quot;resize&quot;</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>resize<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>echart <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="v-if-指令产生的内存泄露"><a href="#v-if-指令产生的内存泄露" class="header-anchor">#</a> v-if 指令产生的内存泄露</h3> <p>v-if 绑定到 false 的值，但是实际上 dom 元素在隐藏的时候没有被真实的释放掉。</p> <p>比如下面的示例中，我们加载了一个带有非常多选项的选择框，然后我们用到了一个显示/隐藏按钮，通过一个 v-if 指令从虚拟 DOM 中添加或移除它。这个示例的问题在于这个 v-if 指令会从 DOM 中移除父级元素，但是我们并没有清除由 Choices.js 新添加的 DOM 片段，从而导致了内存泄漏。</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>app<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">v-if</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>showChoices<span class="token punctuation">&quot;</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>hide<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Hide<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">v-if</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>!showChoices<span class="token punctuation">&quot;</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>show<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>Show<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">v-if</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>showChoices<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>select<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+  <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+    <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">showChoices</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      window<span class="token punctuation">.</span>select <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">[</span><span class="token string">'select'</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>showChoices <span class="token operator">=</span> <span class="token boolean">true</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token function">hide</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>showChoices <span class="token operator">=</span> <span class="token boolean">false</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><h3 id="es6-防止内存泄漏"><a href="#es6-防止内存泄漏" class="header-anchor">#</a> ES6 防止内存泄漏</h3> <p>前面说过，及时清除引用非常重要。但是，你不可能记得那么多，有时候一疏忽就忘了，所以才有那么多内存泄漏。</p> <p>ES6 考虑到这点，推出了两种新的数据结构： weakset 和 weakmap 。他们对值的引用都是不计入垃圾回收机制的，也就是说，如果其他对象都不再引用该对象，那么垃圾回收机制会自动回收该对象所占用的内存。</p> <p>WeakMap 对象是一组键/值对的集合，其中的键是弱引用的。其键必须是对象，而值可以是任意的。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">const</span> wm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WeakMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> element <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'example'</span><span class="token punctuation">)</span>
+vm<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>element<span class="token punctuation">,</span> <span class="token string">'something'</span><span class="token punctuation">)</span>
+vm<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span>
+</code></pre></div><p>上面代码中，先新建一个 Weakmap 实例。然后，将一个 DOM 节点作为键名存入该实例，并将一些附加信息作为键值，一起存放在 WeakMap 里面。这时，WeakMap 里面对 element 的引用就是弱引用，不会被计入垃圾回收机制。</p> <p>注册监听事件的 listener 对象很适合用 WeakMap 来实现。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">function</span> <span class="token function">handler</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token operator">*</span><span class="token number">1024</span><span class="token operator">*</span><span class="token number">1024</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 代码1</span>
+$0<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token operator">*</span><span class="token number">1024</span><span class="token operator">*</span><span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 代码2</span>
+<span class="token keyword">const</span> listener <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WeakMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+listener<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>$0<span class="token punctuation">,</span>handler<span class="token punctuation">)</span>
+$0<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> listener<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>$0<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+</code></pre></div><p>代码 2 比起代码 1 的好处是：由于监听函数是放在 WeakMap 里面，一旦 dom 对象 ele 消失，与它绑定的监听函数 handler 也会自动消失</p> <div class="language-js extra-class"><pre class="language-js"><code>
+<span class="token comment">// 查看内存</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>performance<span class="token punctuation">.</span>memory<span class="token punctuation">.</span>totalJSHeapSize<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> wm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WeakMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> b <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+wm<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token operator">*</span><span class="token number">1024</span><span class="token operator">*</span><span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 查看内存</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>performance<span class="token punctuation">.</span>memory<span class="token punctuation">.</span>totalJSHeapSize<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+b <span class="token operator">=</span> <span class="token keyword">null</span>
+<span class="token comment">// 先手动回收内存，再查看</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>performance<span class="token punctuation">.</span>memory<span class="token punctuation">.</span>totalJSHeapSize<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+</code></pre></div><p>会发现当<code>b</code>的指向清理后，WeakMap内<code>set b</code>的内存被清理掉了</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/document/solution/内存泄漏/chrome性能工具使用/chrome性能工具使用.html">
+        chrome性能、内存工具使用
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.7f164021.js" defer></script><script src="/assets/js/3.ddea4ccb.js" defer></script><script src="/assets/js/35.9272b2ae.js" defer></script>
+  </body>
+</html>
