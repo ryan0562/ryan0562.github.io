@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>开发技巧 | wk-ui</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    
+    <meta name="description" content="王先生的小屋">
+    
+    <link rel="preload" href="/assets/css/0.styles.aef7a6d3.css" as="style"><link rel="preload" href="/assets/js/app.82c64afb.js" as="script"><link rel="preload" href="/assets/js/3.10c3bbc2.js" as="script"><link rel="preload" href="/assets/js/38.ba47738a.js" as="script"><link rel="prefetch" href="/assets/js/10.c95c5021.js"><link rel="prefetch" href="/assets/js/11.b3a4eed8.js"><link rel="prefetch" href="/assets/js/12.7d4a35e1.js"><link rel="prefetch" href="/assets/js/13.fd7a6f14.js"><link rel="prefetch" href="/assets/js/14.ef2fb9fa.js"><link rel="prefetch" href="/assets/js/15.47bebc67.js"><link rel="prefetch" href="/assets/js/16.3698dda9.js"><link rel="prefetch" href="/assets/js/17.c1361fd4.js"><link rel="prefetch" href="/assets/js/18.87b1d778.js"><link rel="prefetch" href="/assets/js/19.6e724c79.js"><link rel="prefetch" href="/assets/js/2.b5d6722e.js"><link rel="prefetch" href="/assets/js/20.14181385.js"><link rel="prefetch" href="/assets/js/21.ff7781d3.js"><link rel="prefetch" href="/assets/js/22.3f68dcc5.js"><link rel="prefetch" href="/assets/js/23.01442fcf.js"><link rel="prefetch" href="/assets/js/24.520f1829.js"><link rel="prefetch" href="/assets/js/25.38b2b869.js"><link rel="prefetch" href="/assets/js/26.cefcc454.js"><link rel="prefetch" href="/assets/js/27.d80095f0.js"><link rel="prefetch" href="/assets/js/28.1bcc3321.js"><link rel="prefetch" href="/assets/js/29.9cc0febd.js"><link rel="prefetch" href="/assets/js/30.41c615fd.js"><link rel="prefetch" href="/assets/js/31.3aa982dc.js"><link rel="prefetch" href="/assets/js/32.c148450e.js"><link rel="prefetch" href="/assets/js/33.3e4413a2.js"><link rel="prefetch" href="/assets/js/34.18a28874.js"><link rel="prefetch" href="/assets/js/35.00be84b7.js"><link rel="prefetch" href="/assets/js/36.1d4e79d8.js"><link rel="prefetch" href="/assets/js/37.fa83b971.js"><link rel="prefetch" href="/assets/js/39.117cd39d.js"><link rel="prefetch" href="/assets/js/4.cc99969b.js"><link rel="prefetch" href="/assets/js/40.64be20f0.js"><link rel="prefetch" href="/assets/js/41.0a4e681c.js"><link rel="prefetch" href="/assets/js/42.6513674c.js"><link rel="prefetch" href="/assets/js/43.e637e4a2.js"><link rel="prefetch" href="/assets/js/44.dfdaf13e.js"><link rel="prefetch" href="/assets/js/45.948c97cd.js"><link rel="prefetch" href="/assets/js/46.bfc96d51.js"><link rel="prefetch" href="/assets/js/47.9e4982a4.js"><link rel="prefetch" href="/assets/js/48.580f3b99.js"><link rel="prefetch" href="/assets/js/49.9e2a40f8.js"><link rel="prefetch" href="/assets/js/5.2a9cd165.js"><link rel="prefetch" href="/assets/js/50.ec44dd23.js"><link rel="prefetch" href="/assets/js/51.d553b1d7.js"><link rel="prefetch" href="/assets/js/52.853b1610.js"><link rel="prefetch" href="/assets/js/53.824e0b47.js"><link rel="prefetch" href="/assets/js/54.23ea9b6b.js"><link rel="prefetch" href="/assets/js/55.c1fce63a.js"><link rel="prefetch" href="/assets/js/56.354f8a21.js"><link rel="prefetch" href="/assets/js/57.2d820a1e.js"><link rel="prefetch" href="/assets/js/58.3bf8b82a.js"><link rel="prefetch" href="/assets/js/59.21bb0be9.js"><link rel="prefetch" href="/assets/js/6.264303f1.js"><link rel="prefetch" href="/assets/js/60.c07cc1a5.js"><link rel="prefetch" href="/assets/js/61.e12c57c7.js"><link rel="prefetch" href="/assets/js/62.c457690e.js"><link rel="prefetch" href="/assets/js/63.abd74fc4.js"><link rel="prefetch" href="/assets/js/64.8a668847.js"><link rel="prefetch" href="/assets/js/65.d76902bc.js"><link rel="prefetch" href="/assets/js/66.81d7d54c.js"><link rel="prefetch" href="/assets/js/67.e8632801.js"><link rel="prefetch" href="/assets/js/68.a4e87331.js"><link rel="prefetch" href="/assets/js/7.2ba9113f.js"><link rel="prefetch" href="/assets/js/8.8d7b2556.js"><link rel="prefetch" href="/assets/js/9.cf177511.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.aef7a6d3.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">wk-ui</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/document/form/dialog.html" class="nav-link">
+  组件文档
+</a></div><div class="nav-item"><a href="/document/directive/permission.html" class="nav-link">
+  指令
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具" class="dropdown-title"><span class="title">工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="工具" class="mobile-dropdown-title"><span class="title">工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/tools/图片压缩/图片压缩.html" class="nav-link">
+  图片压缩
+</a></li><li class="dropdown-item"><h4>
+          git
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/document/tools/git/git-ssh.html" class="nav-link">
+  git解决方案
+</a></li></ul></li><li class="dropdown-item"><h4>
+          npm
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/document/tools/npm/nrm.html" class="nav-link">
+  nrm换源
+</a></li><li class="dropdown-subitem"><a href="/document/tools/npm/changeOrigin.html" class="nav-link">
+  npm手动换源
+</a></li><li class="dropdown-subitem"><a href="/document/tools/npm/pnpm.html" class="nav-link">
+  pnpm
+</a></li></ul></li><li class="dropdown-item"><h4>
+          eslint
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/document/tools/eslint/提交钩子.html" class="nav-link">
+  提交钩子
+</a></li><li class="dropdown-subitem"><a href="/document/tools/eslint/常见报错.html" class="nav-link">
+  常见报错
+</a></li></ul></li><li class="dropdown-item"><h4>
+          自由
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/document/tools/free/梯子.html" class="nav-link">
+  梯子
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="阅读" class="dropdown-title"><span class="title">阅读</span> <span class="arrow down"></span></button> <button type="button" aria-label="阅读" class="mobile-dropdown-title"><span class="title">阅读</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/read/正面教育.html" class="nav-link">
+  正面教育
+</a></li><li class="dropdown-item"><!----> <a href="/document/read/财富安全法则.html" class="nav-link">
+  财富安全法则
+</a></li><li class="dropdown-item"><!----> <a href="/document/read/算法学习.html" class="nav-link">
+  hello 算法
+</a></li></ul></div></div><div class="nav-item"><a href="/document/skill/skill.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  开发技巧
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具代码库" class="dropdown-title"><span class="title">工具代码库</span> <span class="arrow down"></span></button> <button type="button" aria-label="工具代码库" class="mobile-dropdown-title"><span class="title">工具代码库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/utils/vue.html" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/document/utils/媒体.html" class="nav-link">
+  媒体
+</a></li><li class="dropdown-item"><!----> <a href="/document/utils/数据类型操作.html" class="nav-link">
+  数据类型操作
+</a></li><li class="dropdown-item"><!----> <a href="/document/utils/时间操作.html" class="nav-link">
+  时间操作
+</a></li><li class="dropdown-item"><!----> <a href="/document/utils/空间、坐标、地理.html" class="nav-link">
+  空间、坐标、地理
+</a></li><li class="dropdown-item"><!----> <a href="/document/utils/设备、环境、功能支持.html" class="nav-link">
+  设备、环境、功能支持
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="解决方案" class="dropdown-title"><span class="title">解决方案</span> <span class="arrow down"></span></button> <button type="button" aria-label="解决方案" class="mobile-dropdown-title"><span class="title">解决方案</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/solution/内存泄漏/内存泄漏.html" class="nav-link">
+  内存泄漏
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/微前端/微前端.html" class="nav-link">
+  微前端
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/夸页面通信/夸页面通信.html" class="nav-link">
+  夸页面通信
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/换肤/换肤.html" class="nav-link">
+  换肤
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/大屏模块化/介绍.html" class="nav-link">
+  大屏设计器
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/高分辨率图片加载/高分辨率图片加载.html" class="nav-link">
+  高分辨率图片加载
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/录屏/录屏.html" class="nav-link">
+  录屏
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/中文字体子集化方案/中文字体子集化方案.html" class="nav-link">
+  中文字体子集化方案
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/常见附件预览/常见附件预览.html" class="nav-link">
+  常见附件预览：图片、视频、音频、文本、pdf、office
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/element-ui图标乱码解决/element-ui图标乱码解决.html" class="nav-link">
+  element-ui图标乱码解决
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="服务器" class="dropdown-title"><span class="title">服务器</span> <span class="arrow down"></span></button> <button type="button" aria-label="服务器" class="mobile-dropdown-title"><span class="title">服务器</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/server/内网穿透/内网穿透.html" class="nav-link">
+  内网穿透
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="游乐场" class="dropdown-title"><span class="title">游乐场</span> <span class="arrow down"></span></button> <button type="button" aria-label="游乐场" class="mobile-dropdown-title"><span class="title">游乐场</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/play/autoSendEmail/autoSendEmail.html" class="nav-link">
+  自动发送邮件
+</a></li></ul></div></div><div class="nav-item"><a href="/document/openai/openai.html" class="nav-link">
+  人工智能
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="生活" class="dropdown-title"><span class="title">生活</span> <span class="arrow down"></span></button> <button type="button" aria-label="生活" class="mobile-dropdown-title"><span class="title">生活</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/life/健康的作息时间.html" class="nav-link">
+  健康的作息时间
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/document/form/dialog.html" class="nav-link">
+  组件文档
+</a></div><div class="nav-item"><a href="/document/directive/permission.html" class="nav-link">
+  指令
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具" class="dropdown-title"><span class="title">工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="工具" class="mobile-dropdown-title"><span class="title">工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/tools/图片压缩/图片压缩.html" class="nav-link">
+  图片压缩
+</a></li><li class="dropdown-item"><h4>
+          git
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/document/tools/git/git-ssh.html" class="nav-link">
+  git解决方案
+</a></li></ul></li><li class="dropdown-item"><h4>
+          npm
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/document/tools/npm/nrm.html" class="nav-link">
+  nrm换源
+</a></li><li class="dropdown-subitem"><a href="/document/tools/npm/changeOrigin.html" class="nav-link">
+  npm手动换源
+</a></li><li class="dropdown-subitem"><a href="/document/tools/npm/pnpm.html" class="nav-link">
+  pnpm
+</a></li></ul></li><li class="dropdown-item"><h4>
+          eslint
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/document/tools/eslint/提交钩子.html" class="nav-link">
+  提交钩子
+</a></li><li class="dropdown-subitem"><a href="/document/tools/eslint/常见报错.html" class="nav-link">
+  常见报错
+</a></li></ul></li><li class="dropdown-item"><h4>
+          自由
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/document/tools/free/梯子.html" class="nav-link">
+  梯子
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="阅读" class="dropdown-title"><span class="title">阅读</span> <span class="arrow down"></span></button> <button type="button" aria-label="阅读" class="mobile-dropdown-title"><span class="title">阅读</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/read/正面教育.html" class="nav-link">
+  正面教育
+</a></li><li class="dropdown-item"><!----> <a href="/document/read/财富安全法则.html" class="nav-link">
+  财富安全法则
+</a></li><li class="dropdown-item"><!----> <a href="/document/read/算法学习.html" class="nav-link">
+  hello 算法
+</a></li></ul></div></div><div class="nav-item"><a href="/document/skill/skill.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  开发技巧
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工具代码库" class="dropdown-title"><span class="title">工具代码库</span> <span class="arrow down"></span></button> <button type="button" aria-label="工具代码库" class="mobile-dropdown-title"><span class="title">工具代码库</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/utils/vue.html" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/document/utils/媒体.html" class="nav-link">
+  媒体
+</a></li><li class="dropdown-item"><!----> <a href="/document/utils/数据类型操作.html" class="nav-link">
+  数据类型操作
+</a></li><li class="dropdown-item"><!----> <a href="/document/utils/时间操作.html" class="nav-link">
+  时间操作
+</a></li><li class="dropdown-item"><!----> <a href="/document/utils/空间、坐标、地理.html" class="nav-link">
+  空间、坐标、地理
+</a></li><li class="dropdown-item"><!----> <a href="/document/utils/设备、环境、功能支持.html" class="nav-link">
+  设备、环境、功能支持
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="解决方案" class="dropdown-title"><span class="title">解决方案</span> <span class="arrow down"></span></button> <button type="button" aria-label="解决方案" class="mobile-dropdown-title"><span class="title">解决方案</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/solution/内存泄漏/内存泄漏.html" class="nav-link">
+  内存泄漏
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/微前端/微前端.html" class="nav-link">
+  微前端
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/夸页面通信/夸页面通信.html" class="nav-link">
+  夸页面通信
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/换肤/换肤.html" class="nav-link">
+  换肤
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/大屏模块化/介绍.html" class="nav-link">
+  大屏设计器
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/高分辨率图片加载/高分辨率图片加载.html" class="nav-link">
+  高分辨率图片加载
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/录屏/录屏.html" class="nav-link">
+  录屏
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/中文字体子集化方案/中文字体子集化方案.html" class="nav-link">
+  中文字体子集化方案
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/常见附件预览/常见附件预览.html" class="nav-link">
+  常见附件预览：图片、视频、音频、文本、pdf、office
+</a></li><li class="dropdown-item"><!----> <a href="/document/solution/element-ui图标乱码解决/element-ui图标乱码解决.html" class="nav-link">
+  element-ui图标乱码解决
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="服务器" class="dropdown-title"><span class="title">服务器</span> <span class="arrow down"></span></button> <button type="button" aria-label="服务器" class="mobile-dropdown-title"><span class="title">服务器</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/server/内网穿透/内网穿透.html" class="nav-link">
+  内网穿透
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="游乐场" class="dropdown-title"><span class="title">游乐场</span> <span class="arrow down"></span></button> <button type="button" aria-label="游乐场" class="mobile-dropdown-title"><span class="title">游乐场</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/play/autoSendEmail/autoSendEmail.html" class="nav-link">
+  自动发送邮件
+</a></li></ul></div></div><div class="nav-item"><a href="/document/openai/openai.html" class="nav-link">
+  人工智能
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="生活" class="dropdown-title"><span class="title">生活</span> <span class="arrow down"></span></button> <button type="button" aria-label="生活" class="mobile-dropdown-title"><span class="title">生活</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/document/life/健康的作息时间.html" class="nav-link">
+  健康的作息时间
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/document/skill/skill.html" aria-current="page" class="active sidebar-link">开发技巧</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/document/skill/skill.html#第三方库的修改或继承" class="sidebar-link">第三方库的修改或继承</a></li><li class="sidebar-sub-header"><a href="/document/skill/skill.html#await错误捕获" class="sidebar-link">await错误捕获</a></li><li class="sidebar-sub-header"><a href="/document/skill/skill.html#弹性盒子超出出现滚动条" class="sidebar-link">弹性盒子超出出现滚动条</a></li><li class="sidebar-sub-header"><a href="/document/skill/skill.html#proxy-代理未设置信任的服务器" class="sidebar-link">proxy 代理未设置信任的服务器</a></li><li class="sidebar-sub-header"><a href="/document/skill/skill.html#proxy定位具体的代理地址" class="sidebar-link">proxy定位具体的代理地址</a></li><li class="sidebar-sub-header"><a href="/document/skill/skill.html#导出json" class="sidebar-link">导出json</a></li><li class="sidebar-sub-header"><a href="/document/skill/skill.html#post-请求下载-二进制文件" class="sidebar-link">post 请求下载 二进制文件</a></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="开发技巧"><a href="#开发技巧" class="header-anchor">#</a> 开发技巧</h1> <h2 id="第三方库的修改或继承"><a href="#第三方库的修改或继承" class="header-anchor">#</a> 第三方库的修改或继承</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 使用 new myDayjs()</span>
+<span class="token keyword">const</span> <span class="token function-variable function">myDayjs</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">date<span class="token punctuation">,</span> c</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">MyDayjs</span><span class="token punctuation">(</span>date<span class="token punctuation">,</span> c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">MyDayjs</span> <span class="token keyword">extends</span> <span class="token class-name">dayjs</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">date<span class="token punctuation">,</span> c</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>date<span class="token punctuation">,</span> c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="await错误捕获"><a href="#await错误捕获" class="header-anchor">#</a> await错误捕获</h2> <h3 id="安装"><a href="#安装" class="header-anchor">#</a> 安装</h3> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">npm</span> i await-to-js <span class="token parameter variable">--save</span>
+</code></pre></div><h3 id="使用"><a href="#使用" class="header-anchor">#</a> 使用</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 使用await-to-js后</span>
+<span class="token keyword">import</span> to <span class="token keyword">from</span> <span class="token string">'./to.js'</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token keyword">async</span> <span class="token function">getData</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">const</span> <span class="token punctuation">[</span>err<span class="token punctuation">,</span> data1<span class="token punctuation">]</span>  <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">to</span><span class="token punctuation">(</span>promise<span class="token punctuation">)</span>
+   <span class="token keyword">if</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   
+   <span class="token keyword">const</span> <span class="token punctuation">[</span>err<span class="token punctuation">,</span> data2<span class="token punctuation">]</span>  <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">to</span><span class="token punctuation">(</span>promise<span class="token punctuation">)</span>
+   <span class="token keyword">if</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   
+   <span class="token keyword">const</span> <span class="token punctuation">[</span>err<span class="token punctuation">,</span> data3<span class="token punctuation">]</span>  <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">to</span><span class="token punctuation">(</span>promise<span class="token punctuation">)</span>
+   <span class="token keyword">if</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="源码解析"><a href="#源码解析" class="header-anchor">#</a> 源码解析</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">to</span><span class="token punctuation">(</span>
+  <span class="token parameter">promise<span class="token punctuation">,</span>
+  errorExt</span>
+<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">return</span> promise
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">[</span><span class="token keyword">null</span><span class="token punctuation">,</span> data<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>errorExt<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> parsedError <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> err<span class="token punctuation">,</span> errorExt<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token punctuation">[</span>parsedError<span class="token punctuation">,</span> <span class="token keyword">undefined</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token keyword">return</span> <span class="token punctuation">[</span>err<span class="token punctuation">,</span> <span class="token keyword">undefined</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="弹性盒子超出出现滚动条"><a href="#弹性盒子超出出现滚动条" class="header-anchor">#</a> 弹性盒子超出出现滚动条</h2> <p>flex、grid布局时，弹性盒子默认最小尺寸是内容尺寸，所以导致溢出，直接设置为0就可以让最小尺寸低于内容尺寸来解决溢出问题</p> <div class="language-css extra-class"><pre class="language-css"><code><span class="token property">flex</span><span class="token punctuation">:</span>1<span class="token punctuation">;</span>
+<span class="token property">min-width</span><span class="token punctuation">:</span>0<span class="token punctuation">;</span>
+
+</code></pre></div><h2 id="proxy-代理未设置信任的服务器"><a href="#proxy-代理未设置信任的服务器" class="header-anchor">#</a> proxy 代理未设置信任的服务器</h2> <p>b站监测到我们的referer和origin不是来自他们自己的域名,给返回了403
+那么解决方法就是把referer和origin都改成https://t.bilibili.com(他们信任的域名)，就可以通过了。</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token literal-property property">proxy</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string-property property">'/x'</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token string">'https://api.bilibili.com'</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">secure</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token function-variable function">bypass</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res<span class="token punctuation">,</span> proxyOptions</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>req<span class="token punctuation">.</span>headers <span class="token operator">&amp;&amp;</span> req<span class="token punctuation">.</span>headers<span class="token punctuation">.</span>referer<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          url <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">URL</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>headers<span class="token punctuation">.</span>referer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          req<span class="token punctuation">.</span>headers<span class="token punctuation">.</span>origin <span class="token operator">=</span> <span class="token string">'https://t.bilibili.com'</span><span class="token punctuation">;</span>
+          req<span class="token punctuation">.</span>headers<span class="token punctuation">.</span>referer <span class="token operator">=</span> <span class="token string">'https://t.bilibili.com'</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="proxy定位具体的代理地址"><a href="#proxy定位具体的代理地址" class="header-anchor">#</a> proxy定位具体的代理地址</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token literal-property property">proxy</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token string-property property">'^/api/'</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token string">'http://10.168.4.54:8080'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">changeOrigin</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">pathRewrite</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token string-property property">'^/api/'</span><span class="token operator">:</span> <span class="token string">'/'</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token function">onProxyReq</span><span class="token punctuation">(</span><span class="token parameter">proxyRes<span class="token punctuation">,</span> req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>req<span class="token punctuation">.</span>originalUrl<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> =&gt; </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>proxyRes<span class="token punctuation">.</span>protocol<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">//</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>proxyRes<span class="token punctuation">.</span>host<span class="token interpolation-punctuation punctuation">}</span></span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>proxyRes<span class="token punctuation">.</span>path<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</code></pre></div><h2 id="导出json"><a href="#导出json" class="header-anchor">#</a> 导出json</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token function">saveJSON</span><span class="token punctuation">(</span><span class="token parameter">data<span class="token punctuation">,</span> filename</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'保存的数据为空'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>filename<span class="token punctuation">)</span> filename <span class="token operator">=</span> <span class="token string">'json.json'</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> data <span class="token operator">===</span> <span class="token string">'object'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    data <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">let</span> blob <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Blob</span><span class="token punctuation">(</span><span class="token punctuation">[</span>data<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'text/json'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    e <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createEvent</span><span class="token punctuation">(</span><span class="token string">'MouseEvents'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    a <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  a<span class="token punctuation">.</span>download <span class="token operator">=</span> filename<span class="token punctuation">;</span>
+  a<span class="token punctuation">.</span>href <span class="token operator">=</span> window<span class="token punctuation">.</span><span class="token constant">URL</span><span class="token punctuation">.</span><span class="token function">createObjectURL</span><span class="token punctuation">(</span>blob<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  a<span class="token punctuation">.</span>dataset<span class="token punctuation">.</span>downloadurl <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'text/json'</span><span class="token punctuation">,</span> a<span class="token punctuation">.</span>download<span class="token punctuation">,</span> a<span class="token punctuation">.</span>href<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">':'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  e<span class="token punctuation">.</span><span class="token function">initMouseEvent</span><span class="token punctuation">(</span>
+    <span class="token string">'click'</span><span class="token punctuation">,</span>
+    <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token boolean">false</span><span class="token punctuation">,</span>
+    window<span class="token punctuation">,</span>
+    <span class="token number">0</span><span class="token punctuation">,</span>
+    <span class="token number">0</span><span class="token punctuation">,</span>
+    <span class="token number">0</span><span class="token punctuation">,</span>
+    <span class="token number">0</span><span class="token punctuation">,</span>
+    <span class="token number">0</span><span class="token punctuation">,</span>
+    <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token number">0</span><span class="token punctuation">,</span>
+    <span class="token keyword">null</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  a<span class="token punctuation">.</span><span class="token function">dispatchEvent</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="post-请求下载-二进制文件"><a href="#post-请求下载-二进制文件" class="header-anchor">#</a> post 请求下载 二进制文件</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">/**
+ * post 请求下载 二进制文件
+ * @param url
+ * @param params
+ */</span>
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">postDownload</span><span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">url</span><span class="token operator">:</span> string<span class="token punctuation">,</span> <span class="token literal-property property">params</span><span class="token operator">:</span> any</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">try</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> requestOptions <span class="token operator">=</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">body</span><span class="token operator">:</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>params<span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">'POST'</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">headers</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token string-property property">'Content-Type'</span><span class="token operator">:</span> <span class="token string">'application/json;charset=UTF-8'</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">//full  url</span>
+    <span class="token keyword">const</span> fullUrl <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">VUE_APP_APIKEY</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>url<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
+    <span class="token keyword">const</span> <span class="token literal-property property">response</span><span class="token operator">:</span> any <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">fetch</span><span class="token punctuation">(</span>fullUrl<span class="token punctuation">,</span> requestOptions<span class="token punctuation">)</span>
+    <span class="token keyword">const</span> filename <span class="token operator">=</span> response<span class="token punctuation">.</span>headers<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'content-disposition'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">';'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'='</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+    <span class="token keyword">const</span> blob <span class="token operator">=</span> <span class="token keyword">await</span> response<span class="token punctuation">.</span><span class="token function">blob</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">const</span> link <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span>
+    link<span class="token punctuation">.</span>download <span class="token operator">=</span> <span class="token function">decodeURIComponent</span><span class="token punctuation">(</span>filename<span class="token punctuation">)</span>
+    link<span class="token punctuation">.</span>style<span class="token punctuation">.</span>display <span class="token operator">=</span> <span class="token string">'none'</span>
+    link<span class="token punctuation">.</span>href <span class="token operator">=</span> <span class="token constant">URL</span><span class="token punctuation">.</span><span class="token function">createObjectURL</span><span class="token punctuation">(</span>blob<span class="token punctuation">)</span>
+    document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>link<span class="token punctuation">)</span>
+    link<span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token constant">URL</span><span class="token punctuation">.</span><span class="token function">revokeObjectURL</span><span class="token punctuation">(</span>link<span class="token punctuation">.</span>href<span class="token punctuation">)</span>
+    document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">removeChild</span><span class="token punctuation">(</span>link<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    Message<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'下载出错'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.82c64afb.js" defer></script><script src="/assets/js/3.10c3bbc2.js" defer></script><script src="/assets/js/38.ba47738a.js" defer></script>
+  </body>
+</html>
